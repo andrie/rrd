@@ -14,6 +14,14 @@ knitr::opts_chunk$set(
 ```
 # rrd
 
+[![Build Status](https://travis-ci.org/andrie/rrd.svg?branch=master)](https://travis-ci.org/andrie/rrd)
+[![Build Status](https://travis-ci.org/andrie/rrd.svg?branch=dev)](https://travis-ci.org/andrie/rrd)[![CRAN status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/package=rrd)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![](http://www.r-pkg.org/badges/version/rrd)](http://www.r-pkg.org/pkg/rrd)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/rrd)](http://www.r-pkg.org/pkg/rrd)
+[![Coverage Status](https://img.shields.io/codecov/c/github/andrie/rrd/master.svg)](https://codecov.io/github/andrie/rrd?branch=master)
+
+
 The `rrd` package allows you to read data from an [RRD](http://oss.oetiker.ch/rrdtool/) database.
 
 Internally it uses [librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html) to import the binary data directly into R without exporting it to an intermediate format first.

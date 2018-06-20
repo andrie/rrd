@@ -1,20 +1,39 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-rrd
-===
 
-The `rrd` package allows you to read data from an [RRD](http://oss.oetiker.ch/rrdtool/) database.
+# rrd
 
-Internally it uses [librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html) to import the binary data directly into R without exporting it to an intermediate format first.
+[![Build
+Status](https://travis-ci.org/andrie/rrd.svg?branch=master)](https://travis-ci.org/andrie/rrd)
+[![Build
+Status](https://travis-ci.org/andrie/rrd.svg?branch=dev)](https://travis-ci.org/andrie/rrd)[![CRAN
+status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/package=rrd)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![](http://www.r-pkg.org/badges/version/rrd)](http://www.r-pkg.org/pkg/rrd)
+[![CRAN RStudio mirror
+downloads](http://cranlogs.r-pkg.org/badges/rrd)](http://www.r-pkg.org/pkg/rrd)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/andrie/rrd/master.svg)](https://codecov.io/github/andrie/rrd?branch=master)
 
-For an introduction to RRD database, see <https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html>
+The `rrd` package allows you to read data from an
+[RRD](http://oss.oetiker.ch/rrdtool/) database.
 
-Installation
-------------
+Internally it uses
+[librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html) to import the
+binary data directly into R without exporting it to an intermediate
+format first.
+
+For an introduction to RRD database, see
+<https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html>
+
+## Installation
 
 ### Pre-requisites
 
-In order to build the package from source you need [librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html). Installing [RRDtool](http://oss.oetiker.ch/rrdtool/) from your package manager will usually also install the library.
+In order to build the package from source you need
+[librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html). Installing
+[RRDtool](http://oss.oetiker.ch/rrdtool/) from your package manager will
+usually also install the library.
 
 In ubuntu:
 
@@ -41,8 +60,7 @@ And the development version from [GitHub](https://github.com/) with:
 devtools::install_github("andrie/rrd")
 ```
 
-Example
--------
+## Example
 
 In R:
 
@@ -69,7 +87,8 @@ describe_rrd(rrd_cpu_0)
 #> [10] MAX_86400 (1825 rows)
 ```
 
-To read an entire RRD file, i.e. all of the RRA archives, use `read_rrd()`. This returns a list of `tibble` objects:
+To read an entire RRD file, i.e. all of the RRA archives, use
+`read_rrd()`. This returns a list of `tibble` objects:
 
 ``` r
 cpu <- read_rrd(rrd_cpu_0)
@@ -88,7 +107,8 @@ str(cpu, max.level = 1)
 #>  $ MAX86400    :Classes 'tbl_df', 'tbl' and 'data.frame':    1824 obs. of  9 variables:
 ```
 
-Since the resulting object is a list of `tibble`s, you can easily work with individual data frames:
+Since the resulting object is a list of `tibble`s, you can easily work
+with individual data frames:
 
 ``` r
 names(cpu)
@@ -117,9 +137,14 @@ tail(cpu$AVERAGE60$sys)
 #> [6] 0.0005689333
 ```
 
-To read a single RRA archive from an RRD file, use `read_rra()`. To use this function, you must specify several arguments that define the specific data to retrieve. This includes the consolidation function (e.g. "AVERAGE") and time step (e.g. 60), the `end` time. You must also specifiy either the `start` time, or the number of steps, `n_steps`.
+To read a single RRA archive from an RRD file, use `read_rra()`. To use
+this function, you must specify several arguments that define the
+specific data to retrieve. This includes the consolidation function
+(e.g. “AVERAGE”) and time step (e.g. 60), the `end` time. You must also
+specifiy either the `start` time, or the number of steps, `n_steps`.
 
-In this example, you extract the average for 1 minute periods (`step = 60`), for one entire day (`n_steps = 24 * 60`):
+In this example, you extract the average for 1 minute periods (`step
+= 60`), for one entire day (`n_steps = 24 * 60`):
 
 ``` r
 end_time <- as.POSIXct("2018-05-02") # timestamp with data in example
@@ -155,9 +180,13 @@ ggplot(avg_60, aes(x = timestamp, y = user)) +
 
 <img src="man/figures/README-unnamed-chunk-1-1.png" width="100%" />
 
-More information
-----------------
+## More information
 
-For more information on `rrdtool` and the `rrd` format please refer to the official [rrdtool documentation](http://oss.oetiker.ch/rrdtool/doc/index.en.html) and [tutorials](http://oss.oetiker.ch/rrdtool/tut/index.en.html).
+For more information on `rrdtool` and the `rrd` format please refer to
+the official [rrdtool
+documentation](http://oss.oetiker.ch/rrdtool/doc/index.en.html) and
+[tutorials](http://oss.oetiker.ch/rrdtool/tut/index.en.html).
 
-You can read a more in-depth description of the package and more examples in this [blog post](http://plamendimitrov.net/blog/2014/08/09/r-package-for-working-with-rrd-files/).
+You can read a more in-depth description of the package and more
+examples in this [blog
+post](http://plamendimitrov.net/blog/2014/08/09/r-package-for-working-with-rrd-files/).

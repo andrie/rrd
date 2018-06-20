@@ -16,4 +16,5 @@ Imports:
     tibble
 License: MIT + file LICENSE
 Suggests: 
-    testthat
+    testthat,
+    covr

@@ -2,7 +2,7 @@ Package: rrd
 Type: Package
 Title: Import Data from a RRD File into R
 Version: 0.1.0.9000
-Date: 2018-05-11
+Date: 2018-06-20 
 Author: Plamen Dimitrov <dim.plamen@gmail.com>
 Maintainer: Andrie de Vries <apdevries@gmail.com>
 Description: Makes it easy to import the data from a RRD database directly into

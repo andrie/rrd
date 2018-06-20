@@ -1,0 +1,20 @@
+language: r
+dist: trusty
+sudo: false
+cache: packages
+
+r:
+ - release
+ - devel
+ - oldrel
+
+addons:
+  apt:
+    packages:
+      - rrdtool
+      - librrd-dev
+
+r_binary_packages: withr
+
+after_success:
+  - test $TRAVIS_R_VERSION_STRING = "release" && Rscript -e 'withr::with_envvar(c(NOT_CRAN="true"), {covr::codecov()})'

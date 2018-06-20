@@ -51,8 +51,9 @@ describe_rrd <- function(filename){
 #' @param cf The consolidation function that is applied to the data you want to fetch. Must be one of `c("AVERAGE", "MIN", "MAX", "LAST")`
 #' @param step step
 #' 
-#' @param start start
-#' @param end end
+#' @param start start time
+#' @param end end time, defaults to the current system time
+#' @param n_steps number of steps to return
 #' @export
 #' @family rrd functions
 #'

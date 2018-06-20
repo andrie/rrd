@@ -13,9 +13,11 @@ read_rra(filename, cf, step, n_steps, start, end = Sys.time())
 
 \item{step}{step}
 
-\item{start}{start}
+\item{n_steps}{number of steps to return}
 
-\item{end}{end}
+\item{start}{start time}
+
+\item{end}{end time, defaults to the current system time}
 }
 \description{
 Finds the RRA (round robin array) that best matches the \code{consolidation function} and the \code{step} and imports all values (from all data stores) in that RRA that are between timestamp \code{start} and \code{end}. Note that \code{start} is not included in the result.
@@ -48,7 +50,7 @@ tail(avg_60)
 
 # read archive by specifying number of rows to retrieve
 avg_60 <- read_rra(rrd_cpu_0, cf = "AVERAGE", step = 60L, 
-                   n_rows = 5, 
+                   n_steps = 5, 
                    end = end_time)
 names(avg_60)
 avg_60

@@ -14,9 +14,9 @@ importRRD(filename, cf = NULL, start = NULL, end = NULL, step = NULL)
 
 \item{cf}{The consolidation function that is applied to the data you want to fetch. Must be one of \code{c("AVERAGE", "MIN", "MAX", "LAST")}}
 
-\item{start}{start}
+\item{start}{start time}
 
-\item{end}{end}
+\item{end}{end time, defaults to the current system time}
 
 \item{step}{step}
 }

@@ -16,7 +16,7 @@ tail(avg_60)
 
 # read archive by specifying number of rows to retrieve
 avg_60 <- read_rra(rrd_cpu_0, cf = "AVERAGE", step = 60L, 
-                   n_rows = 5, 
+                   n_steps = 5, 
                    end = end_time)
 names(avg_60)
 avg_60

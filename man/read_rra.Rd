@@ -57,5 +57,5 @@ avg_60
 }
 \seealso{
 Other rrd functions: \code{\link{describe_rrd}},
-  \code{\link{getVal}}, \code{\link{read_rrd}}
+  \code{\link{read_rrd}}
 }

@@ -34,5 +34,5 @@ tail(
 }
 \seealso{
 Other rrd functions: \code{\link{describe_rrd}},
-  \code{\link{getVal}}, \code{\link{read_rra}}
+  \code{\link{read_rra}}
 }

@@ -1,7 +1,14 @@
+## System requirements
+
+This package requires `librrd-dev` and `rrdtool` as Linux system requirements.
+
+Ubuntu: sudo apt-get install rrdtool librrd-dev
+CentOS: sudo yum install rrdtool rrdtool-devel
+
 ## Test environments
 
 * local Ubuntu 14.04, R-3.5.0
-* ubuntu 14.04 (on travis-ci), R 3.5.0
+* ubuntu 14.04 (on travis-ci), using R-release, R-devel as well as R-old-release
 
 ## Not available on Windows
 

@@ -5,20 +5,6 @@
 #include <stdio.h>
 
 
-// demonstrates how c arrays are imported in R
-//
-// SEXP exposeArray(char c){
-//   int array[5] = {1,2,3,4,5};
-//   int size = sizeof (array) / sizeof (*array);
-//   SEXP out = PROTECT(allocVector(INTSXP, size));
-//   for (int i = 0; i < size; i++){
-//     // printf("iterating.. i = %d len = %d\n", i, size);
-//     INTEGER(out)[i] = array[i];
-//   }
-//   UNPROTECT(1);
-//   
-//   return out;
-// }
 
 // linked list we use to store the rra info
 typedef struct _rra_info {
@@ -144,76 +130,6 @@ rra_info* get_rra_info(rrd_info_t* rrdInfoIn, int *rraCntOut, unsigned long *ste
   *stepOut = step;
   
   return rraInfoOut;
-}
-
-
-/* gets the first timestamp for the RRA identified by cfIn and stepIn in filenameIn  
- * 
- */
-SEXP get_first(SEXP filenameIn, SEXP cfIn, SEXP stepIn)  {
-  const char *cf;
-  
-  unsigned long step;
-  unsigned long curStep;
-  
-  rrd_info_t *rrdInfo;
-  
-  rra_info* rra_info_list;
-  rra_info* rra_info_tmp;
-  
-  int i;
-  int rraCnt;
-  
-  SEXP out;
-  
-  char *filename = (char *)CHAR(asChar(filenameIn));
-  
-  if (access(filename, F_OK) == -1) {
-    Rprintf("file does not exist\n");
-    return R_NilValue;
-  }
-  
-  cf = CHAR(asChar(cfIn));
-  
-  curStep  = (unsigned long) asInteger(stepIn);
-  rrdInfo = rrd_info_r(filename);
-  
-  if (rrdInfo == NULL) {
-    Rprintf("error getting rrd info");
-    return R_NilValue;
-  }
-  
-  rra_info_list = get_rra_info(rrdInfo, &rraCnt, &step);
-  
-  if (rra_info_list == NULL) {
-    Rprintf("error getting rrd info");
-    free(rrdInfo);
-    return R_NilValue;
-  }
-  
-  rra_info_tmp = rra_info_list;
-  
-  i = 0;
-  while (rra_info_tmp) {
-    if (!strcmp(cf, rra_info_tmp->cf) && (curStep == step * rra_info_tmp->pdp_per_row)) {
-      break;
-    }
-    i++;
-    rra_info_tmp = rra_info_tmp->next;
-  }
-  
-  out = PROTECT(allocVector(INTSXP, 1));
-  if (i < rraCnt) {
-    INTEGER(out)[0] = rrd_first_r(filename, i);
-  } else {
-    out = R_NilValue;
-  }
-  
-  free_rra_info(rra_info_list);
-  free(rrdInfo);
-  UNPROTECT(1);
-  
-  return out;
 }
 
 

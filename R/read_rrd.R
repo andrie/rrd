@@ -101,9 +101,11 @@ read_rra <- function(filename, cf, step, n_steps, start, end = Sys.time()){
 #' @export
 importRRD <- function(filename, cf = NULL, start = NULL, end = NULL, step = NULL){
   if (any(!is.null(cf), !is.null(start), !is.null(end), !is.null(step))) {
-    .Deprecated(read_rra)
+    .Deprecated("read_rra")
+    read_rra(filename = filename, cf = cf, start = start, end = end, step = step)
   } else {
-    .Deprecated(read_rrd)
+    .Deprecated("read_rrd")
+    read_rrd(filename = filename)
   }
 }
 

@@ -9,14 +9,14 @@ The package uses \code{librrd} to import the numerical data in a rrd database
 directly into R data structures without using intermediate formats.
 }
 \details{
-Exposes two functions:
+Exposes the following functions:
 \itemize{
+\item \code{\link[=describe_rrd]{describe_rrd()}} to enumerate the archives included in a RRD file.
 \item \code{\link[=read_rrd]{read_rrd()}} to read an entire RRD file, including all the archives
 \item \code{\link[=read_rra]{read_rra()}} to extract a single RRA (round robin archive) from an RRD file
-\item \code{\link[=getVal]{getVal()}} to extract a single value
 }
 
-For more information on rrdtool and the rrd format please refer to the official rrdtool \href{http://oss.oetiker.ch/rrdtool/doc/index.en.html}{documentation} and \href{http://oss.oetiker.ch/rrdtool/tut/index.en.html}{tutorials}.
+For more information on \code{RRdtool} and the \code{RRD} format please refer to the official RRDtool \href{http://oss.oetiker.ch/rrdtool/doc/index.en.html}{documentation} and \href{http://oss.oetiker.ch/rrdtool/tut/index.en.html}{tutorials}.
 
 You can also read a more in-depth description of the package in a \href{http://plamendimitrov.net/blog/2014/08/09/r-package-for-working-with-rrd-files/}{blog post}.
 }

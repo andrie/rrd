@@ -2,7 +2,7 @@ Package: rrd
 Type: Package
 Title: Import Data from a RRD (Round Robin Database) File into R
 Version: 0.2.0
-Date: 2018-06-20 
+Date: 2018-06-22
 Authors@R: c(person("Andrie", "de Vries", email = "apdevries@gmail.com", 
     role = c("cre", "cph")), person("Plamen", "Dimitrov", 
     email = "dim.plamen@gmail.com", role = c("aut", "cph")))
@@ -10,6 +10,7 @@ Description: Makes it easy to import the data from a RRD database directly into
    R data structures. The resulting objects are tibbles or a list of tibbles, 
    making it easy to manipulate the data.
 SystemRequirements: librrd-dev, rrdtool 
+OS_type: unix
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
 NeedsCompilation: yes

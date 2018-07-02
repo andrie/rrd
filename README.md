@@ -5,8 +5,7 @@
 
 [![Build
 Status](https://travis-ci.org/andrie/rrd.svg?branch=master)](https://travis-ci.org/andrie/rrd)
-[![Build
-Status](https://travis-ci.org/andrie/rrd.svg?branch=dev)](https://travis-ci.org/andrie/rrd)[![CRAN
+[![CRAN
 status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/package=rrd)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![](http://www.r-pkg.org/badges/version/rrd)](http://www.r-pkg.org/pkg/rrd)
@@ -47,13 +46,15 @@ In RHEL / CentOS:
 sudo yum install rrdtool rrdtool-devel
 ```
 
-### Installing from CRAN
+### Installing
 
-`rrd` is not yet on CRAN
+You can install the stable version of the package from CRAN:
 
-### Installing from github
+``` r
+install.packages("rrd")
+```
 
-And the development version from [GitHub](https://github.com/) with:
+And the development version from [GitHub](https://github.com/):
 
 ``` r
 # install.packages("devtools")
@@ -187,6 +188,7 @@ the official [rrdtool
 documentation](http://oss.oetiker.ch/rrdtool/doc/index.en.html) and
 [tutorials](http://oss.oetiker.ch/rrdtool/tut/index.en.html).
 
-You can read a more in-depth description of the package and more
-examples in this [blog
-post](http://plamendimitrov.net/blog/2014/08/09/r-package-for-working-with-rrd-files/).
+You can also read a more in-depth description of the package in an [R
+Views](https://rviews.rstudio.com/) blog post [Reading and analysing log
+files in the RRD database
+format](https://rviews.rstudio.com/2018/06/20/reading-rrd-files/).

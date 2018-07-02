@@ -3,12 +3,15 @@
 \docType{package}
 \name{rrd-package}
 \alias{rrd-package}
-\title{Import data from a RRD database into R}
+\alias{rrd}
+\title{Import Data from a RRD (Round Robin Database) File}
 \description{
-The package uses \code{librrd} to import the numerical data in a rrd database
+The package uses \code{librrd} to import the numerical data in a \code{RRD} database
 directly into R data structures without using intermediate formats.
 }
-\details{
+\section{Details}{
+
+
 Exposes the following functions:
 \itemize{
 \item \code{\link[=describe_rrd]{describe_rrd()}} to enumerate the archives included in a RRD file.
@@ -18,12 +21,19 @@ Exposes the following functions:
 
 For more information on \code{RRdtool} and the \code{RRD} format please refer to the official RRDtool \href{http://oss.oetiker.ch/rrdtool/doc/index.en.html}{documentation} and \href{http://oss.oetiker.ch/rrdtool/tut/index.en.html}{tutorials}.
 
-You can also read a more in-depth description of the package in a \href{http://plamendimitrov.net/blog/2014/08/09/r-package-for-working-with-rrd-files/}{blog post}.
+You can also read a more in-depth description of the package in an \href{https://rviews.rstudio.com/}{R Views} blog post \href{https://rviews.rstudio.com/2018/06/20/reading-rrd-files/}{Reading and analysing log files in the RRD database format}.
 }
+
+\section{Package history}{
+
+
+Plamen Dimitrov wrote the original proof of concept of the package during a Google \href{https://www.google-melange.com/archive/gsoc/2014}{Summer of Code 2014} project and wrote an accompanying blog post "\href{http://plamendimitrov.net/blog/2014/08/09/r-package-for-working-with-rrd-files/}{R Package for Working With RRD Files}".
+
+Andrie de Vries became maintainer of the package early in 2018, and prepared the package for release to CRAN by adding documentation, examples and unit tests. At this time the API changed so resulting objects are \code{tibble} objects, making it easier to analyse data using \code{tidyverse} concepts.  At this time he also published the "R Views" \href{https://rviews.rstudio.com/2018/06/20/reading-rrd-files/}{blog post}.
+}
+
 \references{
 \url{http://oss.oetiker.ch/rrdtool/doc/index.en.html}
-
-\url{https://github.com/pldimitrov/rrd}
 }
 \keyword{librrd}
 \keyword{package}

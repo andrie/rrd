@@ -36,17 +36,21 @@ For an introduction to RRD database, see https://oss.oetiker.ch/rrdtool/tut/rrd-
 In order to build the package from source you need [librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html).
 Installing [RRDtool](http://oss.oetiker.ch/rrdtool/) from your package manager will usually also install the library.
 
-In ubuntu:
+In **ubuntu**:
 
 ```sh
 sudo apt-get install rrdtool librrd-dev
 ```
 
-In RHEL / CentOS:
+In **RHEL / CentOS**:
 
 ```sh
 sudo yum install rrdtool rrdtool-devel
 ```
+
+In **Fedora**:
+
+Install `rrdtool-devel` (https://apps.fedoraproject.org/packages/rrdtool-devel)
 
 ### Installing
 
@@ -101,7 +105,7 @@ cpu[[1]]
 
 tail(cpu$AVERAGE60$sys)
 ```
-
+ 
 
 To read a single RRA archive from an RRD file, use `read_rra()`. To use this function, you must specify several arguments that define the specific data to retrieve. This includes the consolidation function (e.g. "AVERAGE") and time step (e.g. 60), the `end` time.  You must also specifiy either the `start` time, or the number of steps, `n_steps`.
 

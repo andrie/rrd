@@ -34,17 +34,22 @@ In order to build the package from source you need
 [RRDtool](http://oss.oetiker.ch/rrdtool/) from your package manager will
 usually also install the library.
 
-In ubuntu:
+In **ubuntu**:
 
 ``` sh
 sudo apt-get install rrdtool librrd-dev
 ```
 
-In RHEL / CentOS:
+In **RHEL / CentOS**:
 
 ``` sh
 sudo yum install rrdtool rrdtool-devel
 ```
+
+In **Fedora**:
+
+Install `rrdtool-devel`
+(<https://apps.fedoraproject.org/packages/rrdtool-devel>)
 
 ### Installing
 

@@ -12,7 +12,11 @@ Description: Makes it easy to import the data from a 'RRD' database
    it easy to manipulate the data.
 URL: https://andrie.github.io/rrd/
 BugReports: https://github.com/andrie/rrd/issues
-SystemRequirements: librrd-dev, rrdtool 
+SystemRequirements: The package depends on libraries from the RRD project
+    <http://oss.oetiker.ch/rrdtool/>. On Debian-based systems, install 'librrd-dev',
+    on CentOS based systems install 'rrdtool-devel', and on Fedora-based systems
+    install 'rrdtool-devel' <https://apps.fedoraproject.org/packages/rrdtool-devel>.
+    For more information, see the README.
 OS_type: unix
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1

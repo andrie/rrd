@@ -26,7 +26,8 @@ Imports:
 License: MIT + file LICENSE
 Suggests: 
     testthat,
-    covr
+    covr,
+    ggplot2
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Encoding: UTF-8

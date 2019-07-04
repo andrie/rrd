@@ -59,3 +59,4 @@ avg_60
 Other rrd functions: \code{\link{describe_rrd}},
   \code{\link{read_rrd}}
 }
+\concept{rrd functions}

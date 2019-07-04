@@ -2,12 +2,13 @@
 % Please edit documentation in R/deprecated.R, R/read_rrd.R
 \name{importRRD}
 \alias{importRRD}
-\alias{importRRD}
 \title{Deprecated functions.}
 \usage{
-importRRD(filename, cf = NULL, start = NULL, end = NULL, step = NULL)
+importRRD(filename, cf = NULL, start = NULL, end = NULL,
+  step = NULL)
 
-importRRD(filename, cf = NULL, start = NULL, end = NULL, step = NULL)
+importRRD(filename, cf = NULL, start = NULL, end = NULL,
+  step = NULL)
 }
 \arguments{
 \item{filename}{File name}

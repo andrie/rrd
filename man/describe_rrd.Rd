@@ -21,3 +21,4 @@ describe_rrd(rrd_cpu_0)
 Other rrd functions: \code{\link{read_rra}},
   \code{\link{read_rrd}}
 }
+\concept{rrd functions}

@@ -18,8 +18,6 @@ SystemRequirements: The package depends on libraries from the RRD project
     install 'rrdtool-devel' <https://apps.fedoraproject.org/packages/rrdtool-devel>.
     For more information, see the README.
 OS_type: unix
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.0.1
 NeedsCompilation: yes
 Imports: 
     assertthat,
@@ -28,3 +26,5 @@ License: MIT + file LICENSE
 Suggests: 
     testthat,
     covr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.0.1

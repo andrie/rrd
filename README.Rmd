@@ -39,13 +39,19 @@ Installing [RRDtool](http://oss.oetiker.ch/rrdtool/) from your package manager w
 In **ubuntu**:
 
 ```sh
-sudo apt-get install rrdtool librrd-dev
+sudo apt-get install librrd-dev
 ```
 
 In **RHEL / CentOS**:
 
 ```sh
-sudo yum install rrdtool rrdtool-devel
+sudo yum install rrdtool-devel
+```
+
+In Fedora:
+
+```sh
+dnf install rrdtool-devel
 ```
 
 In **Fedora**:

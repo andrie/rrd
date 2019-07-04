@@ -58,9 +58,20 @@ img {
   max-width: 100%;
 }
 
+<<<<<<< Updated upstream
 /* Typographic tweaking ---------------------------------*/
 
 .contents h1.page-header {
+=======
+/* Fix bug in bootstrap (only seen in firefox) */
+summary {
+  display: list-item;
+}
+
+/* Typographic tweaking ---------------------------------*/
+
+.contents .page-header {
+>>>>>>> Stashed changes
   margin-top: calc(-60px + 1em);
 }
 
@@ -97,6 +108,7 @@ a.anchor {
   margin-top: -40px;
 }
 
+<<<<<<< Updated upstream
 /* Static header placement on mobile devices */
 @media (max-width: 767px) {
   .navbar-fixed-top {
@@ -108,10 +120,18 @@ a.anchor {
 }
 
 
+=======
+>>>>>>> Stashed changes
 /* Sidebar --------------------------*/
 
 #sidebar {
   margin-top: 30px;
+<<<<<<< Updated upstream
+=======
+  position: -webkit-sticky;
+  position: sticky;
+  top: 70px;
+>>>>>>> Stashed changes
 }
 #sidebar h2 {
   font-size: 1.5em;
@@ -136,10 +156,16 @@ a.anchor {
 .ref-index th {font-weight: normal;}
 
 .ref-index td {vertical-align: top;}
+<<<<<<< Updated upstream
 .ref-index .alias {width: 40%;}
 .ref-index .title {width: 60%;}
 
 .ref-index .alias {width: 40%;}
+=======
+.ref-index .icon {width: 40px;}
+.ref-index .alias {width: 40%;}
+.ref-index-icons .alias {width: calc(40% - 40px);}
+>>>>>>> Stashed changes
 .ref-index .title {width: 60%;}
 
 .ref-arguments th {text-align: right; padding-right: 10px;}
@@ -218,6 +244,22 @@ a.sourceLine:hover {
   visibility: visible;
 }
 
+<<<<<<< Updated upstream
+=======
+/* headroom.js ------------------------ */
+
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+
+>>>>>>> Stashed changes
 /* mark.js ----------------------------*/
 
 mark {
@@ -230,3 +272,12 @@ mark {
 .html-widget {
   margin-bottom: 10px;
 }
+<<<<<<< Updated upstream
+=======
+
+/* fontawesome ------------------------ */
+
+.fab {
+    font-family: "Font Awesome 5 Brands" !important;
+}
+>>>>>>> Stashed changes

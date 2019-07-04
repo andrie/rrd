@@ -14,7 +14,7 @@ CentOS: sudo yum install rrdtool rrdtool-devel
 
 ## Not available on Windows
 
-The package is not yet available on Windows.  It has a system dependency on librrd, which I haven't yet built for Windows.  However, I've spoken to Jeroen Ooms and he has offered to help with this in future
+The package is not yet available on Windows (as indicated with OS_type: unix).  It has a system dependency on librrd, which I haven't yet built for Windows.  However, I've spoken to Jeroen Ooms and he has offered to help with this in future. 
 
 ## R CMD check results
 

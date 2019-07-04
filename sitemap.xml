@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://andrie.github.io/rrd//index.html</loc>
+  </url>
+  <url>
+    <loc>https://andrie.github.io/rrd//reference/describe_rrd.html</loc>
+  </url>
+  <url>
+    <loc>https://andrie.github.io/rrd//reference/importRRD.html</loc>
+  </url>
+  <url>
+    <loc>https://andrie.github.io/rrd//reference/read_rra.html</loc>
+  </url>
+  <url>
+    <loc>https://andrie.github.io/rrd//reference/read_rrd.html</loc>
+  </url>
+  <url>
+    <loc>https://andrie.github.io/rrd//reference/rrd-package.html</loc>
+  </url>
+</urlset>

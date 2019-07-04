@@ -15,6 +15,23 @@ typedef struct _rra_info {
 } rra_info; 
 
 
+/* SMR: guard against unitinialized memory */
+rra_info* alloc_rra_info(void) {
+  rra_info* new_rra_info;
+
+  new_rra_info = malloc(sizeof(rra_info));
+
+  if (new_rra_info != NULL) {
+    new_rra_info->next = NULL;
+    new_rra_info->cf[0] = '\0';
+    new_rra_info->rows = 0L;
+    new_rra_info->pdp_per_row = 0L;
+
+  }
+  return(new_rra_info);
+}
+
+
 void free_rra_info(rra_info* rraInfoOut) {
   while (rraInfoOut) {
     rra_info* tmp = rraInfoOut;
@@ -29,10 +46,11 @@ void print_rra_info(rra_info* rraInfoIn, int count, long unsigned int step) {
   long unsigned int pdp_per_row;
   int i;
   long unsigned int rra_step;
+  rra_info* rra_info_tmp;
   
-  Rprintf("A RRD file with %d RRA arrays and step size %ld\n", count, step);
+  Rprintf("An RRD file with %d RRA arrays and step size %ld\n", count, step);
   
-  rra_info* rra_info_tmp = rraInfoIn;
+  rra_info_tmp = rraInfoIn;
   i = 1;
   while (rra_info_tmp) {
     pdp_per_row = rra_info_tmp->pdp_per_row;
@@ -73,7 +91,7 @@ rra_info* get_rra_info(rrd_info_t* rrdInfoIn, int *rraCntOut, unsigned long *ste
   rra_info* rraInfoOut;
   rra_info* rra_info_tmp;
   
-  rraInfoOut = malloc(sizeof(rra_info)); 
+  rraInfoOut = alloc_rra_info();
   if (rraInfoOut == NULL) {
     Rprintf("error allocating memory\n");
     return NULL;
@@ -91,7 +109,7 @@ rra_info* get_rra_info(rrd_info_t* rrdInfoIn, int *rraCntOut, unsigned long *ste
     
     if (!strcmp(rrdInfoIn->key, cfKey)){
       if (rraCnt > 0) {
-        rra_info_tmp->next = malloc(sizeof(rra_info));
+        rra_info_tmp->next = alloc_rra_info();
         if (rra_info_tmp->next == NULL) {
           free_rra_info(rraInfoOut);
           return NULL;

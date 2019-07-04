@@ -1,6 +1,3 @@
-# library(magrittr)
-if (interactive()) library(testthat)
-
 context("read_rrd")
 
 rrd_cpu_0 <- system.file("extdata/cpu-0.rrd", package = "rrd")
@@ -18,7 +15,7 @@ is_list_of_tibbles <- function(x){
 
 test_that("describe_rrd", {
   
-  expect_output(describe_rrd(rrd_cpu_0), "A RRD file with 10 RRA arrays and step size 60")
+  expect_output(describe_rrd(rrd_cpu_0), "An RRD file with 10 RRA arrays and step size 60")
   capture.output(
     z <- (describe_rrd(rrd_cpu_0)) 
   )

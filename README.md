@@ -64,17 +64,21 @@ For an introduction to RRD database, see
 
 ## Example
 
-In R:
+The package contains some example RRD files that originated in an
+instance of RStudio Connect. In this example, you analyse CPU data in
+the file `cpu-0.rrd`.
+
+Load the package and assign the location of the `cpu-0.rrd` file to a
+variable:
 
 ``` r
 library(rrd)
+rrd_cpu_0 <- system.file("extdata/cpu-0.rrd", package = "rrd")
 ```
 
 To describe the contents of an RRD file, use `describe_rrd()`:
 
 ``` r
-rrd_cpu_0 <- system.file("extdata/cpu-0.rrd", package = "rrd")
-
 describe_rrd(rrd_cpu_0)
 #> A RRD file with 10 RRA arrays and step size 60
 #> [1] AVERAGE_60 (43200 rows)

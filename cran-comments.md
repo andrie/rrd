@@ -1,3 +1,5 @@
+In response to Uwe's request, I added a reference to the RRD project in the package description, and also cleaned up the package title.
+
 ## System requirements
 
 This package requires `librrd-dev` and `rrdtool` as Linux system requirements.

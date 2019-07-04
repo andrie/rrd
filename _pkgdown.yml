@@ -1,0 +1,15 @@
+destination: docs
+reference:
+  - title: Importing an RRD
+    desc: Functions for reading archives (RRA) and database (RRD)
+    contents: 
+    - ends_with("_rra")
+    - ends_with("_rrd")
+  - title: Package documentation
+    desc: ~
+    contents: 
+    - rrd-package
+  - title: Deprecated
+    desc: ~
+    contents: 
+    - ends_with("RRD")

@@ -1,8 +1,3 @@
-#' Import Data from a RRD (Round Robin Database) File
-#' 
-#' The package uses `librrd` to import the numerical data in a `RRD` database
-#' directly into R data structures without using intermediate formats.
-#' 
 #' @section Details:
 #' 
 #' Exposes the following functions:
@@ -36,7 +31,7 @@
 #' 
 #' @importFrom assertthat assert_that
 #' 
-NULL
+"_PACKAGE"
 
 
 

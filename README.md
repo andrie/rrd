@@ -19,6 +19,8 @@ The `rrd` package allows you to read data from an
 
 ## Installation
 
+### System requirements
+
 In order to build the package from source you need
 [librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html). Installing
 [RRDtool](http://oss.oetiker.ch/rrdtool/) from your package manager will
@@ -29,8 +31,13 @@ usually also install the library.
 | Ubuntu        | `apt-get install librrd-dev` |
 | RHEL / CentOS | `yum install rrdtool-devel`  |
 | Fedora        | `dnf install rrdtool-devel`  |
+| OSX           | `brew install librrd-dev`    |
 | Windows       | Not available                |
-| OSX           | ???                          |
+
+Note: on OSX you should also update `xcode`, using `xcode-select
+--install`.
+
+### Package installation
 
 You can install the stable version of the package from CRAN:
 

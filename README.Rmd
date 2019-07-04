@@ -12,47 +12,33 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-# rrd
+
+# rrd <img src='man/figures/rrd-logo.png' align="right" height="139" />
 
 [![Build Status](https://travis-ci.org/andrie/rrd.svg?branch=master)](https://travis-ci.org/andrie/rrd)
 [![CRAN status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/package=rrd)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![](http://www.r-pkg.org/badges/version/rrd)](http://www.r-pkg.org/pkg/rrd)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/rrd)](http://www.r-pkg.org/pkg/rrd)
-[![Coverage Status](https://img.shields.io/codecov/c/github/andrie/rrd/master.svg)](https://codecov.io/github/andrie/rrd?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/andrie/rrd/branch/master/graph/badge.svg)](https://codecov.io/gh/andrie/rrd?branch=master)
 
 
-The `rrd` package allows you to read data from an [RRD](http://oss.oetiker.ch/rrdtool/) database.
+The `rrd` package allows you to read data from an [RRD](http://oss.oetiker.ch/rrdtool/) Round Robin Database.
 
-Internally it uses [librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html) to import the binary data directly into R without exporting it to an intermediate format first.
-
-For an introduction to RRD database, see https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html
 
 ## Installation
-
-
-### Pre-requisites
 
 In order to build the package from source you need [librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html).
 Installing [RRDtool](http://oss.oetiker.ch/rrdtool/) from your package manager will usually also install the library.
 
-In **ubuntu**:
+Platform      | Installation 
+------------- | -----------------------------------------
+Ubuntu        | `apt-get install librrd-dev`
+RHEL / CentOS | `yum install rrdtool-devel`
+Fedora        | `dnf install rrdtool-devel`
+Windows       | Not available
+OSX           | ???
 
-```sh
-sudo apt-get install rrdtool librrd-dev
-```
-
-In **RHEL / CentOS**:
-
-```sh
-sudo yum install rrdtool rrdtool-devel
-```
-
-In **Fedora**:
-
-Install `rrdtool-devel` (https://apps.fedoraproject.org/packages/rrdtool-devel)
-
-### Installing
 
 You can install the stable version of the package from CRAN:
 
@@ -66,6 +52,13 @@ And the development version from [GitHub](https://github.com/):
 # install.packages("devtools")
 devtools::install_github("andrie/rrd")
 ```
+
+## About RRD and RRDtool <img src='man/figures/rrdtool-logo.png' align="right" height="70" />
+
+The `rrd` package is a wrapper around `RRDtool`.  Internally it uses [librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html) to import the binary data directly into R without exporting it to an intermediate format first.
+
+For an introduction to RRD database, see https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html
+
 
 ## Example
 
@@ -121,7 +114,7 @@ avg_60
 
 And you can easily plot using your favourite packages:
 
-```{r, fig.height=3}
+```{r out.width="90%", fig.height=3, fig.width=8}
 library(ggplot2)
 ggplot(avg_60, aes(x = timestamp, y = user)) + 
   geom_line() +

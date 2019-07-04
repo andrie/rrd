@@ -1,4 +1,5 @@
 destination: docs
+url: https://andrie.github.io/rrd/
 reference:
   - title: Importing an RRD
     desc: Functions for reading archives (RRA) and database (RRD)

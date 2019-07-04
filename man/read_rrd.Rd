@@ -36,3 +36,4 @@ tail(
 Other rrd functions: \code{\link{describe_rrd}},
   \code{\link{read_rra}}
 }
+\concept{rrd functions}

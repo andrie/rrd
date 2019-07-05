@@ -57,6 +57,11 @@ Authors:
   \item Plamen Dimitrov \email{dim.plamen@gmail.com} [copyright holder]
 }
 
+Other contributors:
+\itemize{
+  \item Tobias Oettiker (rrdtool and rrd library, https://oss.oetiker.ch/rrdtool/) [copyright holder]
+}
+
 }
 \keyword{librrd}
 \keyword{package}

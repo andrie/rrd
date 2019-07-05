@@ -8,6 +8,13 @@
 
 <title>Imports data from an RRD database — read_rrd • rrd</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
@@ -65,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rrd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -140,7 +147,7 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>rrd_cpu_0</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"extdata/cpu-0.rrd"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"rrd"</span>)
 
-<span class='fu'><a href='describe_rrd.html'>describe_rrd</a></span>(<span class='no'>rrd_cpu_0</span>)</div><div class='output co'>#&gt; A RRD file with 10 RRA arrays and step size 60
+<span class='fu'><a href='describe_rrd.html'>describe_rrd</a></span>(<span class='no'>rrd_cpu_0</span>)</div><div class='output co'>#&gt; An RRD file with 10 RRA arrays and step size 60
 #&gt; [1] AVERAGE_60 (43200 rows)
 #&gt; [2] AVERAGE_300 (25920 rows)
 #&gt; [3] MIN_300 (25920 rows)

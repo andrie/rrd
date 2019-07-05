@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Import Data from a RRD (Round Robin Database) File • rrd</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
@@ -13,7 +19,9 @@
 <meta property="og:description" content="Makes it easy to import the data from a 'RRD' database 
    (&lt;https://oss.oetiker.ch/rrdtool/&gt;) directly into R data structures. The 
    resulting objects are 'tibble' objects or a list of 'tibble' objects, making
-   it easy to manipulate the data.">
+   it easy to manipulate the data.  The package uses `librrd` to import the 
+   numerical data in a `RRD` database directly into R data structures without 
+   using intermediate formats.">
 <meta property="og:image" content="https://andrie.github.io/rrd/logo.png">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -34,7 +42,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">rrd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -82,40 +90,66 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
+<div id="system-requirements" class="section level3">
+<h3 class="hasAnchor">
+<a href="#system-requirements" class="anchor"></a>System requirements</h3>
 <p>In order to build the package from source you need <a href="http://oss.oetiker.ch/rrdtool/doc/librrd.en.html">librrd</a>. Installing <a href="http://oss.oetiker.ch/rrdtool/">RRDtool</a> from your package manager will usually also install the library.</p>
 <table class="table table">
+<colgroup>
+<col width="18%">
+<col width="41%">
+<col width="40%">
+</colgroup>
 <thead><tr class="header">
 <th>Platform</th>
 <th>Installation</th>
+<th>Reference</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Ubuntu</td>
+<td>Debian / Ubuntu</td>
 <td><code>apt-get install librrd-dev</code></td>
+<td></td>
 </tr>
 <tr class="even">
 <td>RHEL / CentOS</td>
 <td><code>yum install rrdtool-devel</code></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>Fedora</td>
 <td><code>dnf install rrdtool-devel</code></td>
+<td><a href="https://apps.fedoraproject.org/packages/rrdtool-devel" class="uri">https://apps.fedoraproject.org/packages/rrdtool-devel</a></td>
+</tr>
+<tr class="even">
+<td>Solaris / CSW</td>
+<td>Install <code>rrdtool</code>
+</td>
+<td><a href="https://www.opencsw.org/packages/rrdtool/" class="uri">https://www.opencsw.org/packages/rrdtool/</a></td>
+</tr>
+<tr class="odd">
+<td>OSX</td>
+<td><code>brew install rrdtool</code></td>
+<td></td>
 </tr>
 <tr class="even">
 <td>Windows</td>
 <td>Not available</td>
-</tr>
-<tr class="odd">
-<td>OSX</td>
-<td>???</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p>Note: on OSX you may have to update <code>xcode</code>, using <code>xcode-select --install</code>.</p>
+</div>
+<div id="package-installation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#package-installation" class="anchor"></a>Package installation</h3>
 <p>You can install the stable version of the package from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"rrd"</span>)</a></code></pre></div>
 <p>And the development version from <a href="https://github.com/">GitHub</a>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"andrie/rrd"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># install.packages("remotes")</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"andrie/rrd"</span>)</a></code></pre></div>
+</div>
 </div>
 <div id="about-rrd-and-rrdtool" class="section level2">
 <h2 class="hasAnchor">
@@ -127,23 +161,23 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>In R:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(rrd)</a></code></pre></div>
+<p>The package contains some example RRD files that originated in an instance of RStudio Connect. In this example, you analyse CPU data in the file <code>cpu-0.rrd</code>.</p>
+<p>Load the package and assign the location of the <code>cpu-0.rrd</code> file to a variable:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(rrd)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">rrd_cpu_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/cpu-0.rrd"</span>, <span class="dt">package =</span> <span class="st">"rrd"</span>)</a></code></pre></div>
 <p>To describe the contents of an RRD file, use <code><a href="reference/describe_rrd.html">describe_rrd()</a></code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">rrd_cpu_<span class="dv">0</span> &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"extdata/cpu-0.rrd"</span>, <span class="dt">package =</span> <span class="st">"rrd"</span>)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw"><a href="reference/describe_rrd.html">describe_rrd</a></span>(rrd_cpu_<span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; A RRD file with 10 RRA arrays and step size 60</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; [1] AVERAGE_60 (43200 rows)</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; [2] AVERAGE_300 (25920 rows)</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; [3] MIN_300 (25920 rows)</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; [4] MAX_300 (25920 rows)</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; [5] AVERAGE_3600 (8760 rows)</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; [6] MIN_3600 (8760 rows)</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; [7] MAX_3600 (8760 rows)</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; [8] AVERAGE_86400 (1825 rows)</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; [9] MIN_86400 (1825 rows)</span></a>
-<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; [10] MAX_86400 (1825 rows)</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/describe_rrd.html">describe_rrd</a></span>(rrd_cpu_<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; An RRD file with 10 RRA arrays and step size 60</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; [1] AVERAGE_60 (43200 rows)</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; [2] AVERAGE_300 (25920 rows)</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; [3] MIN_300 (25920 rows)</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; [4] MAX_300 (25920 rows)</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; [5] AVERAGE_3600 (8760 rows)</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; [6] MIN_3600 (8760 rows)</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; [7] MAX_3600 (8760 rows)</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; [8] AVERAGE_86400 (1825 rows)</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; [9] MIN_86400 (1825 rows)</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; [10] MAX_86400 (1825 rows)</span></a></code></pre></div>
 <p>To read an entire RRD file, i.e. all of the RRA archives, use <code><a href="reference/read_rrd.html">read_rrd()</a></code>. This returns a list of <code>tibble</code> objects:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">cpu &lt;-<span class="st"> </span><span class="kw"><a href="reference/read_rrd.html">read_rrd</a></span>(rrd_cpu_<span class="dv">0</span>)</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"></a>
@@ -246,6 +280,7 @@
 <ul class="list-unstyled">
 <li>Andrie de Vries <br><small class="roles"> Maintainer, copyright holder </small>  </li>
 <li>Plamen Dimitrov <br><small class="roles"> Author, copyright holder </small>  </li>
+<li><a href="authors.html">All authors...</a></li>
 </ul>
 </div>
 

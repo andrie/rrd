@@ -6,8 +6,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Import Data from a RRD (Round Robin Database) File — rrd-package • rrd</title>
+<title>rrd: Import Data from a RRD (Round Robin Database) File — rrd-package • rrd</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
@@ -30,10 +37,14 @@
 
 
 
-<meta property="og:title" content="Import Data from a RRD (Round Robin Database) File — rrd-package" />
+<meta property="og:title" content="rrd: Import Data from a RRD (Round Robin Database) File — rrd-package" />
 
-<meta property="og:description" content="The package uses librrd to import the numerical data in a RRD database
-directly into R data structures without using intermediate formats." />
+<meta property="og:description" content="Makes it easy to import the data from a 'RRD' database 
+   (&amp;lt;https://oss.oetiker.ch/rrdtool/&amp;gt;) directly into R data structures. The 
+   resulting objects are 'tibble' objects or a list of 'tibble' objects, making
+   it easy to manipulate the data.  The package uses `librrd` to import the 
+   numerical data in a `RRD` database directly into R data structures without 
+   using intermediate formats." />
 
 <meta property="og:image" content="https://andrie.github.io/rrd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -66,7 +77,7 @@ directly into R data structures without using intermediate formats." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rrd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -102,15 +113,19 @@ directly into R data structures without using intermediate formats." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Import Data from a RRD (Round Robin Database) File</h1>
+    <h1>rrd: Import Data from a RRD (Round Robin Database) File</h1>
     <small class="dont-index">Source: <a href='https://github.com/andrie/rrd/blob/master/R/rrd-package.R'><code>R/rrd-package.R</code></a></small>
     <div class="hidden name"><code>rrd-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>The package uses <code>librrd</code> to import the numerical data in a <code>RRD</code> database
-directly into R data structures without using intermediate formats.</p>
+    <p>Makes it easy to import the data from a 'RRD' database 
+   (&lt;https://oss.oetiker.ch/rrdtool/&gt;) directly into R data structures. The 
+   resulting objects are 'tibble' objects or a list of 'tibble' objects, making
+   it easy to manipulate the data.  The package uses `librrd` to import the 
+   numerical data in a `RRD` database directly into R data structures without 
+   using intermediate formats.</p>
     
     </div>
 
@@ -136,6 +151,14 @@ directly into R data structures without using intermediate formats.</p>
 
     <p><a href='http://oss.oetiker.ch/rrdtool/doc/index.en.html'>http://oss.oetiker.ch/rrdtool/doc/index.en.html</a></p>
     
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Useful links:</p><ul>
+<li><p><a href='https://github.com/andrie/rrd/'>https://github.com/andrie/rrd/</a></p></li>
+<li><p><a href='https://andrie.github.io/rrd/'>https://andrie.github.io/rrd/</a></p></li>
+<li><p>Report bugs at <a href='https://github.com/andrie/rrd/issues'>https://github.com/andrie/rrd/issues</a></p></li>
+</ul></div>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -147,7 +170,20 @@ directly into R data structures without using intermediate formats.</p>
       <li><a href="#package-history">Package history</a></li>
 
       <li><a href="#references">References</a></li>
+
+      <li><a href="#see-also">See also</a></li>
           </ul>
+
+    <h2>Author</h2>
+    <p><strong>Maintainer</strong>: Andrie de Vries <a href='mailto:apdevries@gmail.com'>apdevries@gmail.com</a> [copyright holder]</p>
+<p>Authors:</p><ul>
+<li><p>Plamen Dimitrov <a href='mailto:dim.plamen@gmail.com'>dim.plamen@gmail.com</a> [copyright holder]</p></li>
+</ul>
+
+<p>Other contributors:</p><ul>
+<li><p>Tobias Oettiker (rrdtool and rrd library, https://oss.oetiker.ch/rrdtool/) [copyright holder]</p></li>
+</ul>
+
 
   </div>
 </div>

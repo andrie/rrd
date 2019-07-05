@@ -31,7 +31,7 @@ library.
 | --------------- | ---------------------------- | ------------------------------------------------------- |
 | Debian / Ubuntu | `apt-get install librrd-dev` |                                                         |
 | RHEL / CentOS   | `yum install rrdtool-devel`  |                                                         |
-| Fedora          | `dnf install rrdtool-devel`  | <https://apps.fedoraproject.org/packages/rrdtool-devel> |
+| Fedora          | `yum install rrdtool-devel`  | <https://apps.fedoraproject.org/packages/rrdtool-devel> |
 | Solaris / CSW   | Install `rrdtool`            | <https://www.opencsw.org/packages/rrdtool/>             |
 | OSX             | `brew install rrdtool`       |                                                         |
 | Windows         | Not available                |                                                         |
@@ -180,18 +180,13 @@ And you can easily plot using your favourite packages:
 
 ``` r
 library(ggplot2)
-#> Registered S3 methods overwritten by 'ggplot2':
-#>   method         from 
-#>   [.quosures     rlang
-#>   c.quosures     rlang
-#>   print.quosures rlang
 ggplot(avg_60, aes(x = timestamp, y = user)) + 
   geom_line() +
   stat_smooth(method = "loess", span = 0.125, se = FALSE) +
   ggtitle("CPU0 usage, data read from RRD file")
 ```
 
-<img src="man/figures/README-unnamed-chunk-1-1.png" width="90%" />
+<img src="man/figures/README-plot-1.png" width="90%" />
 
 ## More information
 

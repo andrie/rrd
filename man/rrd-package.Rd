@@ -3,11 +3,16 @@
 \docType{package}
 \name{rrd-package}
 \alias{rrd-package}
+\alias{_PACKAGE}
 \alias{rrd}
-\title{Import Data from a RRD (Round Robin Database) File}
+\title{rrd: Import Data from a RRD (Round Robin Database) File}
 \description{
-The package uses \code{librrd} to import the numerical data in a \code{RRD} database
-directly into R data structures without using intermediate formats.
+Makes it easy to import the data from a 'RRD' database 
+   (<https://oss.oetiker.ch/rrdtool/>) directly into R data structures. The 
+   resulting objects are 'tibble' objects or a list of 'tibble' objects, making
+   it easy to manipulate the data.  The package uses `librrd` to import the 
+   numerical data in a `RRD` database directly into R data structures without 
+   using intermediate formats.
 }
 \section{Details}{
 
@@ -34,6 +39,29 @@ Andrie de Vries became maintainer of the package early in 2018, and prepared the
 
 \references{
 \url{http://oss.oetiker.ch/rrdtool/doc/index.en.html}
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/andrie/rrd/}
+  \item \url{https://andrie.github.io/rrd/}
+  \item Report bugs at \url{https://github.com/andrie/rrd/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Andrie de Vries \email{apdevries@gmail.com} [copyright holder]
+
+Authors:
+\itemize{
+  \item Plamen Dimitrov \email{dim.plamen@gmail.com} [copyright holder]
+}
+
+Other contributors:
+\itemize{
+  \item Tobias Oettiker (rrdtool and rrd library, https://oss.oetiker.ch/rrdtool/) [copyright holder]
+}
+
 }
 \keyword{librrd}
 \keyword{package}

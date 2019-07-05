@@ -35,3 +35,10 @@ matrix:
     - name: "Devel"
       r: devel
 
+    - name: "OSX"
+      r: release
+      os: osx
+      before_install: 
+      - brew update
+      - brew install rrdtool
+

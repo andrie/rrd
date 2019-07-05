@@ -1,3 +1,0 @@
-CC=clang
-
-PKG_LIBS = -lrrd

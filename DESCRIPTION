@@ -1,16 +1,19 @@
 Package: rrd
 Type: Package
 Title: Import Data from a RRD (Round Robin Database) File
-Version: 0.2.1.9001
-Date: 2019-07-04
+Version: 0.2.2
+Date: 2019-07-05
 Authors@R: c(
     person("Andrie", "de Vries", email = "apdevries@gmail.com", role = c("cre", "cph")), 
-    person("Plamen", "Dimitrov", email = "dim.plamen@gmail.com", role = c("aut", "cph"))
+    person("Plamen", "Dimitrov", email = "dim.plamen@gmail.com", role = c("aut", "cph")),
+    person("Tobias", "Oettiker", role = "cph", comment = "rrdtool and rrd library, https://oss.oetiker.ch/rrdtool/")
     )
 Description: Makes it easy to import the data from a 'RRD' database 
    (<https://oss.oetiker.ch/rrdtool/>) directly into R data structures. The 
    resulting objects are 'tibble' objects or a list of 'tibble' objects, making
-   it easy to manipulate the data.
+   it easy to manipulate the data.  The package uses `librrd` to import the 
+   numerical data in a `RRD` database directly into R data structures without 
+   using intermediate formats.
 URL: https://github.com/andrie/rrd/, https://andrie.github.io/rrd/
 BugReports: https://github.com/andrie/rrd/issues
 SystemRequirements: The package depends on libraries from the RRD project

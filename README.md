@@ -19,18 +19,27 @@ The `rrd` package allows you to read data from an
 
 ## Installation
 
+### System requirements
+
 In order to build the package from source you need
 [librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html). Installing
 [RRDtool](http://oss.oetiker.ch/rrdtool/) from your package manager will
-usually also install the library.
+usually also install the
+library.
 
-| Platform      | Installation                 |
-| ------------- | ---------------------------- |
-| Ubuntu        | `apt-get install librrd-dev` |
-| RHEL / CentOS | `yum install rrdtool-devel`  |
-| Fedora        | `dnf install rrdtool-devel`  |
-| Windows       | Not available                |
-| OSX           | ???                          |
+| Platform        | Installation                 | Reference                                               |
+| --------------- | ---------------------------- | ------------------------------------------------------- |
+| Debian / Ubuntu | `apt-get install librrd-dev` |                                                         |
+| RHEL / CentOS   | `yum install rrdtool-devel`  |                                                         |
+| Fedora          | `dnf install rrdtool-devel`  | <https://apps.fedoraproject.org/packages/rrdtool-devel> |
+| Solaris / CSW   | Install `rrdtool`            | <https://www.opencsw.org/packages/rrdtool/>             |
+| OSX             | `brew install rrdtool`       |                                                         |
+| Windows         | Not available                |                                                         |
+
+Note: on OSX you may have to update `xcode`, using `xcode-select
+--install`.
+
+### Package installation
 
 You can install the stable version of the package from CRAN:
 
@@ -41,8 +50,8 @@ install.packages("rrd")
 And the development version from [GitHub](https://github.com/):
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("andrie/rrd")
+# install.packages("remotes")
+remotes::install_github("andrie/rrd")
 ```
 
 ## About RRD and RRDtool <img src='man/figures/rrdtool-logo.png' align="right" height="70" />
@@ -57,17 +66,21 @@ For an introduction to RRD database, see
 
 ## Example
 
-In R:
+The package contains some example RRD files that originated in an
+instance of RStudio Connect. In this example, you analyse CPU data in
+the file `cpu-0.rrd`.
+
+Load the package and assign the location of the `cpu-0.rrd` file to a
+variable:
 
 ``` r
 library(rrd)
+rrd_cpu_0 <- system.file("extdata/cpu-0.rrd", package = "rrd")
 ```
 
 To describe the contents of an RRD file, use `describe_rrd()`:
 
 ``` r
-rrd_cpu_0 <- system.file("extdata/cpu-0.rrd", package = "rrd")
-
 describe_rrd(rrd_cpu_0)
 #> A RRD file with 10 RRA arrays and step size 60
 #> [1] AVERAGE_60 (43200 rows)

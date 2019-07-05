@@ -8,8 +8,8 @@
 # Library settings
 PKG_CONFIG_NAME="librrd"
 PKG_DEB_NAME="librrd-dev"
-PKG_RPM_NAME="rrd-devel"
-PKG_CSW_NAME="librrd-dev"
+PKG_RPM_NAME="rrdtool-devel"
+PKG_CSW_NAME="rrdtool"
 PKG_BREW_NAME="rrdtool"
 PKG_TEST_HEADER="<rrd.h>"
 PKG_LIBS="-lrrd"

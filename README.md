@@ -24,17 +24,19 @@ The `rrd` package allows you to read data from an
 In order to build the package from source you need
 [librrd](http://oss.oetiker.ch/rrdtool/doc/librrd.en.html). Installing
 [RRDtool](http://oss.oetiker.ch/rrdtool/) from your package manager will
-usually also install the library.
+usually also install the
+library.
 
-| Platform      | Installation                 |
-| ------------- | ---------------------------- |
-| Ubuntu        | `apt-get install librrd-dev` |
-| RHEL / CentOS | `yum install rrdtool-devel`  |
-| Fedora        | `dnf install rrdtool-devel`  |
-| OSX           | `brew install librrd-dev`    |
-| Windows       | Not available                |
+| Platform        | Installation                 | Reference                                               |
+| --------------- | ---------------------------- | ------------------------------------------------------- |
+| Debian / Ubuntu | `apt-get install librrd-dev` |                                                         |
+| RHEL / CentOS   | `yum install rrdtool-devel`  |                                                         |
+| Fedora          | `dnf install rrdtool-devel`  | <https://apps.fedoraproject.org/packages/rrdtool-devel> |
+| Solaris / CSW   | Install `rrdtool`            | <https://www.opencsw.org/packages/rrdtool/>             |
+| OSX             | `brew install rrdtool`       |                                                         |
+| Windows         | Not available                |                                                         |
 
-Note: on OSX you should also update `xcode`, using `xcode-select
+Note: on OSX you may have to update `xcode`, using `xcode-select
 --install`.
 
 ### Package installation
@@ -48,8 +50,8 @@ install.packages("rrd")
 And the development version from [GitHub](https://github.com/):
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("andrie/rrd")
+# install.packages("remotes")
+remotes::install_github("andrie/rrd")
 ```
 
 ## About RRD and RRDtool <img src='man/figures/rrdtool-logo.png' align="right" height="70" />

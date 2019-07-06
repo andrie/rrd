@@ -13,3 +13,4 @@ dev
 
 ^logo.svg$
 ^rrdtool.svg$
+^CRAN-RELEASE$

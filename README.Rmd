@@ -37,7 +37,7 @@ Platform        | Installation                   | Reference
 -------------   | ------------------------------ | -----------------------------
 Debian / Ubuntu | `apt-get install librrd-dev`   |
 RHEL / CentOS   | `yum install rrdtool-devel`    |
-Fedora          | `dnf install rrdtool-devel`    | https://apps.fedoraproject.org/packages/rrdtool-devel
+Fedora          | `yum install rrdtool-devel`    | https://apps.fedoraproject.org/packages/rrdtool-devel
 Solaris / CSW   | Install `rrdtool`              | https://www.opencsw.org/packages/rrdtool/
 OSX             | `brew install rrdtool`         |
 Windows         | Not available                  |
@@ -121,7 +121,7 @@ avg_60
 
 And you can easily plot using your favourite packages:
 
-```{r out.width="90%", fig.height=3, fig.width=8}
+```{r plot, out.width="90%", fig.height=3, fig.width=8}
 library(ggplot2)
 ggplot(avg_60, aes(x = timestamp, y = user)) + 
   geom_line() +

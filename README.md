@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rrd <img src='man/figures/rrd-logo.png' align="right" height="139" />
+# rrd <img src='man/figures/logo.svg' align="right" height="139" />
 
 [![Build
 Status](https://travis-ci.org/andrie/rrd.svg?branch=master)](https://travis-ci.org/andrie/rrd)

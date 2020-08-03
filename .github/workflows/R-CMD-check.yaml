@@ -61,6 +61,7 @@ jobs:
       - name: Install system dependencies
         if: runner.os == 'Linux'
         run: |
+          eval sudo apt-get install librrd-dev
           while read -r cmd
           do
             eval sudo $cmd

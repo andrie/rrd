@@ -59,6 +59,9 @@ jobs:
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
       - name: Install system dependencies
+        if: runner.os == "macOS"
+        run: |
+          eval brew install rrdtool
         if: runner.os == 'Linux'
         run: |
           eval sudo apt-get install librrd-dev

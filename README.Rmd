@@ -15,12 +15,14 @@ knitr::opts_chunk$set(
 
 # rrd <img src='man/figures/logo.svg' align="right" height="139" />
 
-[![Build Status](https://travis-ci.org/andrie/rrd.svg?branch=master)](https://travis-ci.org/andrie/rrd)
+<!-- badges: start -->
+[![R build status](https://github.com/andrie/rrd/workflows/R-CMD-check/badge.svg)](https://github.com/andrie/rrd/actions)
 [![CRAN status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/package=rrd)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![](http://www.r-pkg.org/badges/version/rrd)](http://www.r-pkg.org/pkg/rrd)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/rrd)](http://www.r-pkg.org/pkg/rrd)
 [![Codecov test coverage](https://codecov.io/gh/andrie/rrd/branch/master/graph/badge.svg)](https://codecov.io/gh/andrie/rrd?branch=master)
+<!-- badges: end -->
 
 
 The `rrd` package allows you to read data from an [RRD](http://oss.oetiker.ch/rrdtool/) Round Robin Database.

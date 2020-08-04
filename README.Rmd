@@ -15,7 +15,6 @@ knitr::opts_chunk$set(
 
 # rrd <img src='man/figures/logo.svg' align="right" height="139" />
 
-
 <!-- badges: start -->
 [![R build status](https://github.com/andrie/rrd/workflows/R-CMD-check/badge.svg)](https://github.com/andrie/rrd/actions)
 [![CRAN status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/package=rrd)

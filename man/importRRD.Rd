@@ -4,11 +4,9 @@
 \alias{importRRD}
 \title{Deprecated functions.}
 \usage{
-importRRD(filename, cf = NULL, start = NULL, end = NULL,
-  step = NULL)
+importRRD(filename, cf = NULL, start = NULL, end = NULL, step = NULL)
 
-importRRD(filename, cf = NULL, start = NULL, end = NULL,
-  step = NULL)
+importRRD(filename, cf = NULL, start = NULL, end = NULL, step = NULL)
 }
 \arguments{
 \item{filename}{File name}

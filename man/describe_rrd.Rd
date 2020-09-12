@@ -18,7 +18,8 @@ rrd_cpu_0 <- system.file("extdata/cpu-0.rrd", package = "rrd")
 describe_rrd(rrd_cpu_0)
 }
 \seealso{
-Other rrd functions: \code{\link{read_rra}},
-  \code{\link{read_rrd}}
+Other rrd functions: 
+\code{\link{read_rra}()},
+\code{\link{read_rrd}()}
 }
 \concept{rrd functions}

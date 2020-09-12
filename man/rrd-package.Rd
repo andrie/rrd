@@ -7,6 +7,8 @@
 \alias{rrd}
 \title{rrd: Import Data from a RRD (Round Robin Database) File}
 \description{
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+
 Makes it easy to import the data from a 'RRD' database 
    (<https://oss.oetiker.ch/rrdtool/>) directly into R data structures. The 
    resulting objects are 'tibble' objects or a list of 'tibble' objects, making

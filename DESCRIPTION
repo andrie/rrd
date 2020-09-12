@@ -1,8 +1,7 @@
 Package: rrd
 Type: Package
 Title: Import Data from a RRD (Round Robin Database) File
-Version: 0.2.2
-Date: 2019-07-05
+Version: 0.2.2.9000
 Authors@R: c(
     person("Andrie", "de Vries", email = "apdevries@gmail.com", role = c("cre", "cph")), 
     person("Plamen", "Dimitrov", email = "dim.plamen@gmail.com", role = c("aut", "cph")),
@@ -32,5 +31,6 @@ Suggests:
     covr,
     ggplot2
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 Encoding: UTF-8
+Config/testthat/edition: 3

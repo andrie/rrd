@@ -81,7 +81,7 @@ Returns a data.frame object having the timestamp and the data stores as columns.
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rrd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2.9000</span>
       </span>
     </div>
 
@@ -165,8 +165,9 @@ Returns a data.frame object having the timestamp and the data stores as columns.
 <p>The returned <code>data.frame</code> has the <code>timestamp</code> and the data stores as separate columns. The names of the data sources are extracted from the RRD file and set as column names. The timestamps are also used as row names.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other rrd functions: <code><a href='describe_rrd.html'>describe_rrd</a></code>,
-  <code><a href='read_rrd.html'>read_rrd</a></code></p></div>
+    <div class='dont-index'><p>Other rrd functions: 
+<code><a href='describe_rrd.html'>describe_rrd</a>()</code>,
+<code><a href='read_rrd.html'>read_rrd</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>rrd_cpu_0</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/cpu-0.rrd"</span>, package = <span class='st'>"rrd"</span>)

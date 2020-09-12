@@ -20,7 +20,7 @@ read_rra(filename, cf, step, n_steps, start, end = Sys.time())
 \item{end}{end time, defaults to the current system time}
 }
 \description{
-Finds the RRA (round robin array) that best matches the \code{consolidation function} and the \code{step} and imports all values (from all data stores) in that RRA that are between timestamp \code{start} and \code{end}. Note that \code{start} is not included in the result.
+Finds the RRA (round robin array) that best matches the \verb{consolidation function} and the \code{step} and imports all values (from all data stores) in that RRA that are between timestamp \code{start} and \code{end}. Note that \code{start} is not included in the result.
 
 Returns a \code{data.frame} object having the \code{timestamp} and the data stores as columns. The data store names are retrieved from the RRD file and set as the corresponding column names. The timestamps are also used as row names.
 }
@@ -56,7 +56,8 @@ names(avg_60)
 avg_60
 }
 \seealso{
-Other rrd functions: \code{\link{describe_rrd}},
-  \code{\link{read_rrd}}
+Other rrd functions: 
+\code{\link{describe_rrd}()},
+\code{\link{read_rrd}()}
 }
 \concept{rrd functions}

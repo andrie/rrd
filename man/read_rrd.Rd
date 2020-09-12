@@ -33,7 +33,8 @@ tail(
 \url{https://oss.oetiker.ch/rrdtool/doc/rrdfetch.en.html}
 }
 \seealso{
-Other rrd functions: \code{\link{describe_rrd}},
-  \code{\link{read_rra}}
+Other rrd functions: 
+\code{\link{describe_rrd}()},
+\code{\link{read_rra}()}
 }
 \concept{rrd functions}

@@ -1,4 +1,3 @@
-context("read_rrd")
 
 rrd_cpu_0 <- system.file("extdata/cpu-0.rrd", package = "rrd")
 rrd_content_1 <- system.file("extdata/content-1.rrd", package = "rrd")
@@ -19,7 +18,7 @@ test_that("describe_rrd", {
   capture.output(
     z <- (describe_rrd(rrd_cpu_0)) 
   )
-  expect_is(z, "NULL")
+  expect_type(z, "NULL")
 })
 
 test_that("deprecated functions", {
@@ -34,7 +33,7 @@ test_that("deprecated functions", {
   z <- suppressWarnings(
     importRRD(rrd_cpu_0, "MAX", start = Sys.time() - 86400, end = Sys.time(), step = 300L)
   )
-  expect_is(z, "tbl")
+  expect_s3_class(z, "tbl")
 })
 
 
@@ -43,7 +42,7 @@ test_that("read_rrd rrd_cpu_0", {
 
   z <- read_rrd(rrd_cpu_0)
   expect_true(is_list_of_tibbles(z))
-  expect_is(z[[1]], "data.frame")
+  expect_s3_class(z[[1]], "data.frame")
   expect_equal(length(z), 10)
   expect_equal(
     names(z), 
@@ -56,7 +55,7 @@ test_that("read_rrd rrd_content_1", {
   
   z <- read_rrd(rrd_content_1)
   expect_true(is_list_of_tibbles(z))
-  expect_is(z[[1]], "data.frame")
+  expect_s3_class(z[[1]], "data.frame")
   expect_equal(length(z), 10)
   expect_equal(
     names(z), 
@@ -69,7 +68,7 @@ test_that("read_rrd rrd_content_1", {
 test_that("read_rra from rrd_content_1 using start time", {
   
   z <- read_rra(rrd_content_1, "MAX", start = Sys.time() - 86400, end = Sys.time(), step = 300L)
-  expect_is(z, "data.frame")
+  expect_s3_class(z, "data.frame")
   expect_equal(nrow(z), 288)
   expect_equal(ncol(z), 4)
   expect_equal(
@@ -82,7 +81,7 @@ test_that("read_rra from rrd_content_1 using start time", {
 test_that("read_rra from rrd_content_1 using n_rows", {
 
   z <- read_rra(rrd_content_1, "MAX", n_steps = 10, end = Sys.time(), step = 300L)
-  expect_is(z, "data.frame")
+  expect_s3_class(z, "data.frame")
   expect_equal(nrow(z), 10)
   expect_equal(ncol(z), 4)
   expect_equal(

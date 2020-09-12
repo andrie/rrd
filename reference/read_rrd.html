@@ -125,7 +125,7 @@
     <p>Reads the metadata in the RRD and adjusts the parameters accordingly in order to expose all RRAs in their entirety.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>read_rrd</span>(<span class='no'>filename</span>)</pre>
+    <pre class="usage"><span class='fu'>read_rrd</span>(<span class='kw'>filename</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -148,9 +148,10 @@
   <code><a href='read_rra.html'>read_rra</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>rrd_cpu_0</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/cpu-0.rrd"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"rrd"</span>)
+    <pre class="examples"><div class='input'><span class='kw'>rrd_cpu_0</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata/cpu-0.rrd"</span>, package = <span class='st'>"rrd"</span>)
 
-<span class='fu'><a href='describe_rrd.html'>describe_rrd</a></span>(<span class='no'>rrd_cpu_0</span>)</div><div class='output co'>#&gt; An RRD file with 10 RRA arrays and step size 60
+<span class='fu'><a href='describe_rrd.html'>describe_rrd</a></span>(<span class='kw'>rrd_cpu_0</span>)
+</div><div class='output co'>#&gt; An RRD file with 10 RRA arrays and step size 60
 #&gt; [1] AVERAGE_60 (43200 rows)
 #&gt; [2] AVERAGE_300 (25920 rows)
 #&gt; [3] MIN_300 (25920 rows)
@@ -161,9 +162,11 @@
 #&gt; [8] AVERAGE_86400 (1825 rows)
 #&gt; [9] MIN_86400 (1825 rows)
 #&gt; [10] MAX_86400 (1825 rows)</div><div class='input'>
-<span class='no'>cpu</span> <span class='kw'>&lt;-</span> <span class='fu'>read_rrd</span>(<span class='no'>rrd_cpu_0</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>cpu</span>)</div><div class='output co'>#&gt;  [1] "AVERAGE60"    "AVERAGE300"   "MIN300"       "MAX300"       "AVERAGE3600" 
-#&gt;  [6] "MIN3600"      "MAX3600"      "AVERAGE86400" "MIN86400"     "MAX86400"    </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>cpu</span><span class='kw'>[[</span><span class='fl'>1</span>]])</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 6 x 9</span><span>
+<span class='kw'>cpu</span> <span class='op'>&lt;-</span> <span class='fu'>read_rrd</span>(<span class='kw'>rrd_cpu_0</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='kw'>cpu</span>)
+</div><div class='output co'>#&gt;  [1] "AVERAGE60"    "AVERAGE300"   "MIN300"       "MAX300"       "AVERAGE3600" 
+#&gt;  [6] "MIN3600"      "MAX3600"      "AVERAGE86400" "MIN86400"     "MAX86400"    </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='kw'>cpu</span>[[<span class='fl'>1</span>]])
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 6 x 9</span><span>
 #&gt;   timestamp              user     sys  nice  idle  wait   irq softirq   stolen
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>                </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #555555;'>1</span><span> 2018-04-02 </span><span style='color: #555555;'>12:24:00</span><span> 0.010</span><span style='text-decoration: underline;'>4</span><span>  0.008</span><span style='text-decoration: underline;'>11</span><span>     0 0.981     0     0       0 0.000</span><span style='text-decoration: underline;'>137</span><span>
@@ -171,7 +174,8 @@
 #&gt; </span><span style='color: #555555;'>3</span><span> 2018-04-02 </span><span style='color: #555555;'>12:26:00</span><span> 0.015</span><span style='text-decoration: underline;'>9</span><span>  0.008</span><span style='text-decoration: underline;'>08</span><span>     0 0.976     0     0       0 0       
 #&gt; </span><span style='color: #555555;'>4</span><span> 2018-04-02 </span><span style='color: #555555;'>12:27:00</span><span> 0.008</span><span style='text-decoration: underline;'>53</span><span> 0.006</span><span style='text-decoration: underline;'>47</span><span>     0 0.985     0     0       0 0       
 #&gt; </span><span style='color: #555555;'>5</span><span> 2018-04-02 </span><span style='color: #555555;'>12:28:00</span><span> 0.012</span><span style='text-decoration: underline;'>2</span><span>  0.009</span><span style='text-decoration: underline;'>99</span><span>     0 0.978     0     0       0 0       
-#&gt; </span><span style='color: #555555;'>6</span><span> 2018-04-02 </span><span style='color: #555555;'>12:29:00</span><span> 0.010</span><span style='text-decoration: underline;'>6</span><span>  0.006</span><span style='text-decoration: underline;'>04</span><span>     0 0.983     0     0       0 0       </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span>(<span class='no'>cpu</span><span class='kw'>[[</span><span class='fl'>1</span>]])</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 6 x 9</span><span>
+#&gt; </span><span style='color: #555555;'>6</span><span> 2018-04-02 </span><span style='color: #555555;'>12:29:00</span><span> 0.010</span><span style='text-decoration: underline;'>6</span><span>  0.006</span><span style='text-decoration: underline;'>04</span><span>     0 0.983     0     0       0 0       </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span>(<span class='kw'>cpu</span>[[<span class='fl'>1</span>]])
+</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 6 x 9</span><span>
 #&gt;   timestamp              user      sys  nice  idle    wait   irq softirq  stolen
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>                </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #555555;'>1</span><span> 2018-05-02 </span><span style='color: #555555;'>12:17:00</span><span> 0.005</span><span style='text-decoration: underline;'>45</span><span> 0.001</span><span style='text-decoration: underline;'>44</span><span>      0 0.992 1.44</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-3</span><span>     0       0 0.  </span><span style='color: #555555;'> </span><span>  
@@ -181,8 +185,9 @@
 #&gt; </span><span style='color: #555555;'>5</span><span> 2018-05-02 </span><span style='color: #555555;'>12:21:00</span><span> 0.006</span><span style='text-decoration: underline;'>02</span><span> 0.001</span><span style='text-decoration: underline;'>44</span><span>      0 0.992 0.  </span><span style='color: #555555;'> </span><span>       0       0 5.68</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span>
 #&gt; </span><span style='color: #555555;'>6</span><span> 2018-05-02 </span><span style='color: #555555;'>12:22:00</span><span> 0.001</span><span style='text-decoration: underline;'>71</span><span> 0.000</span><span style='text-decoration: underline;'>569</span><span>     0 0.998 0.  </span><span style='color: #555555;'> </span><span>       0       0 0.  </span><span style='color: #555555;'> </span><span>  </div><div class='input'>
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span>(
-  <span class='no'>cpu</span>$<span class='no'>AVERAGE60</span>$<span class='no'>sys</span>
-)</div><div class='output co'>#&gt; [1] 0.0014390667 0.0020080000 0.0005689333 0.0000000000 0.0014390667
+  <span class='kw'>cpu</span><span class='op'>$</span><span class='kw'>AVERAGE60</span><span class='op'>$</span><span class='kw'>sys</span>
+)
+</div><div class='output co'>#&gt; [1] 0.0014390667 0.0020080000 0.0005689333 0.0000000000 0.0014390667
 #&gt; [6] 0.0005689333</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -199,7 +204,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

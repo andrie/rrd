@@ -143,10 +143,14 @@
 <h3 class="hasAnchor">
 <a href="#package-installation" class="anchor"></a>Package installation</h3>
 <p>You can install the stable version of the package from CRAN:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"rrd"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"rrd"</span>)
+</pre></div>
 <p>And the development version from <a href="https://github.com/">GitHub</a>:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="co"># install.packages("remotes")</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"andrie/rrd"</span>)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="co"># install.packages("remotes")</span>
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"andrie/rrd"</span>)
+</pre></div>
 </div>
 </div>
 <div id="about-rrd-and-rrdtool-" class="section level2">
@@ -161,10 +165,13 @@
 <a href="#example" class="anchor"></a>Example</h2>
 <p>The package contains some example RRD files that originated in an instance of RStudio Connect. In this example, you analyse CPU data in the file <code>cpu-0.rrd</code>.</p>
 <p>Load the package and assign the location of the <code>cpu-0.rrd</code> file to a variable:</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">rrd</span>)
-<span class="no">rrd_cpu_0</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/cpu-0.rrd"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"rrd"</span>)</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/andrie/rrd">rrd</a></span>)
+<span class="kw">rrd_cpu_0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/cpu-0.rrd"</span>, package = <span class="st">"rrd"</span>)
+</pre></div>
 <p>To describe the contents of an RRD file, use <code><a href="reference/describe_rrd.html">describe_rrd()</a></code>:</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/describe_rrd.html">describe_rrd</a></span>(<span class="no">rrd_cpu_0</span>)
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="fu"><a href="reference/describe_rrd.html">describe_rrd</a></span>(<span class="kw">rrd_cpu_0</span>)
 <span class="co">#&gt; An RRD file with 10 RRA arrays and step size 60</span>
 <span class="co">#&gt; [1] AVERAGE_60 (43200 rows)</span>
 <span class="co">#&gt; [2] AVERAGE_300 (25920 rows)</span>
@@ -175,11 +182,13 @@
 <span class="co">#&gt; [7] MAX_3600 (8760 rows)</span>
 <span class="co">#&gt; [8] AVERAGE_86400 (1825 rows)</span>
 <span class="co">#&gt; [9] MIN_86400 (1825 rows)</span>
-<span class="co">#&gt; [10] MAX_86400 (1825 rows)</span></pre></div>
+<span class="co">#&gt; [10] MAX_86400 (1825 rows)</span>
+</pre></div>
 <p>To read an entire RRD file, i.e. all of the RRA archives, use <code><a href="reference/read_rrd.html">read_rrd()</a></code>. This returns a list of <code>tibble</code> objects:</p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="no">cpu</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/read_rrd.html">read_rrd</a></span>(<span class="no">rrd_cpu_0</span>)
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="kw">cpu</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_rrd.html">read_rrd</a></span>(<span class="kw">rrd_cpu_0</span>)
 
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">cpu</span>, <span class="kw">max.level</span> <span class="kw">=</span> <span class="fl">1</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="kw">cpu</span>, max.level = <span class="fl">1</span>)
 <span class="co">#&gt; List of 10</span>
 <span class="co">#&gt;  $ AVERAGE60   : tibble [43,199 × 9] (S3: tbl_df/tbl/data.frame)</span>
 <span class="co">#&gt;  $ AVERAGE300  : tibble [25,919 × 9] (S3: tbl_df/tbl/data.frame)</span>
@@ -190,13 +199,15 @@
 <span class="co">#&gt;  $ MAX3600     : tibble [8,759 × 9] (S3: tbl_df/tbl/data.frame)</span>
 <span class="co">#&gt;  $ AVERAGE86400: tibble [1,824 × 9] (S3: tbl_df/tbl/data.frame)</span>
 <span class="co">#&gt;  $ MIN86400    : tibble [1,824 × 9] (S3: tbl_df/tbl/data.frame)</span>
-<span class="co">#&gt;  $ MAX86400    : tibble [1,824 × 9] (S3: tbl_df/tbl/data.frame)</span></pre></div>
+<span class="co">#&gt;  $ MAX86400    : tibble [1,824 × 9] (S3: tbl_df/tbl/data.frame)</span>
+</pre></div>
 <p>Since the resulting object is a list of <code>tibble</code>s, you can easily work with individual data frames:</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">cpu</span>)
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="kw">cpu</span>)
 <span class="co">#&gt;  [1] "AVERAGE60"    "AVERAGE300"   "MIN300"       "MAX300"       "AVERAGE3600" </span>
 <span class="co">#&gt;  [6] "MIN3600"      "MAX3600"      "AVERAGE86400" "MIN86400"     "MAX86400"</span>
 
-<span class="no">cpu</span><span class="kw">[[</span><span class="fl">1</span>]]
+<span class="kw">cpu</span>[[<span class="fl">1</span>]]
 <span class="co">#&gt; [90m# A tibble: 43,199 x 9[39m</span>
 <span class="co">#&gt;    timestamp              user     sys  nice  idle  wait   irq softirq   stolen</span>
 <span class="co">#&gt;    [3m[90m&lt;dttm&gt;[39m[23m                [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m    [3m[90m&lt;dbl&gt;[39m[23m</span>
@@ -212,16 +223,18 @@
 <span class="co">#&gt; [90m10[39m 2018-04-02 [90m12:33:00[39m 0.016[4m2[24m  0.006[4m1[24m[4m7[24m     0 0.978     0     0       0 0.000[4m1[24m[4m3[24m[4m7[24m</span>
 <span class="co">#&gt; [90m# … with 43,189 more rows[39m</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span>(<span class="no">cpu</span>$<span class="no">AVERAGE60</span>$<span class="no">sys</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span>(<span class="kw">cpu</span><span class="op">$</span><span class="kw">AVERAGE60</span><span class="op">$</span><span class="kw">sys</span>)
 <span class="co">#&gt; [1] 0.0014390667 0.0020080000 0.0005689333 0.0000000000 0.0014390667</span>
-<span class="co">#&gt; [6] 0.0005689333</span></pre></div>
+<span class="co">#&gt; [6] 0.0005689333</span>
+</pre></div>
 <p>To read a single RRA archive from an RRD file, use <code><a href="reference/read_rra.html">read_rra()</a></code>. To use this function, you must specify several arguments that define the specific data to retrieve. This includes the consolidation function (e.g. “AVERAGE”) and time step (e.g. 60), the <code>end</code> time. You must also specifiy either the <code>start</code> time, or the number of steps, <code>n_steps</code>.</p>
 <p>In this example, you extract the average for 1 minute periods (<code>step = 60</code>), for one entire day (<code>n_steps = 24 * 60</code>):</p>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="no">end_time</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span>(<span class="st">"2018-05-02"</span>) <span class="co"># timestamp with data in example</span>
-<span class="no">avg_60</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/read_rra.html">read_rra</a></span>(<span class="no">rrd_cpu_0</span>, <span class="kw">cf</span> <span class="kw">=</span> <span class="st">"AVERAGE"</span>, <span class="kw">step</span> <span class="kw">=</span> <span class="fl">60</span>, <span class="kw">n_steps</span> <span class="kw">=</span> <span class="fl">24</span> * <span class="fl">60</span>,
-                     <span class="kw">end</span> <span class="kw">=</span> <span class="no">end_time</span>)
+<div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="kw">end_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span>(<span class="st">"2018-05-02"</span>) <span class="co"># timestamp with data in example</span>
+<span class="kw">avg_60</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_rra.html">read_rra</a></span>(<span class="kw">rrd_cpu_0</span>, cf = <span class="st">"AVERAGE"</span>, step = <span class="fl">60</span>, n_steps = <span class="fl">24</span> <span class="op">*</span> <span class="fl">60</span>,
+                     end = <span class="kw">end_time</span>)
 
-<span class="no">avg_60</span>
+<span class="kw">avg_60</span>
 <span class="co">#&gt; [90m# A tibble: 1,440 x 9[39m</span>
 <span class="co">#&gt;    timestamp              user     sys  nice  idle    wait   irq softirq  stolen</span>
 <span class="co">#&gt;    [3m[90m&lt;dttm&gt;[39m[23m                [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m</span>
@@ -235,14 +248,17 @@
 <span class="co">#&gt; [90m 8[39m 2018-05-01 [90m00:08:00[39m 0.004[4m8[24m[4m8[24m 2.01[90me[39m[31m-3[39m     0 0.993 5.69[90me[39m[31m-4[39m     0       0 0.  [90m [39m  </span>
 <span class="co">#&gt; [90m 9[39m 2018-05-01 [90m00:09:00[39m 0.007[4m4[24m[4m8[24m 5.68[90me[39m[31m-4[39m     0 0.992 0.  [90m [39m       0       0 0.  [90m [39m  </span>
 <span class="co">#&gt; [90m10[39m 2018-05-01 [90m00:10:00[39m 0.005[4m1[24m[4m6[24m 0.  [90m [39m       0 0.995 0.  [90m [39m       0       0 0.  [90m [39m  </span>
-<span class="co">#&gt; [90m# … with 1,430 more rows[39m</span></pre></div>
+<span class="co">#&gt; [90m# … with 1,430 more rows[39m</span>
+</pre></div>
 <p>And you can easily plot using your favourite packages:</p>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">avg_60</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">timestamp</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">user</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>() +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">stat_smooth</a></span>(<span class="kw">method</span> <span class="kw">=</span> <span class="st">"loess"</span>, <span class="kw">span</span> <span class="kw">=</span> <span class="fl">0.125</span>, <span class="kw">se</span> <span class="kw">=</span> <span class="fl">FALSE</span>) +
+<div class="sourceCode" id="cb8"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span>)
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">avg_60</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">timestamp</span>, y = <span class="kw">user</span>)) <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>() <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">stat_smooth</a></span>(method = <span class="st">"loess"</span>, span = <span class="fl">0.125</span>, se = <span class="fl">FALSE</span>) <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span>(<span class="st">"CPU0 usage, data read from RRD file"</span>)
-<span class="co">#&gt; `geom_smooth()` using formula 'y ~ x'</span></pre></div>
+<span class="co">#&gt; `geom_smooth()` using formula 'y ~ x'</span>
+</pre></div>
 <p><img src="reference/figures/README-plot-1.png" width="90%"></p>
 </div>
 <div id="more-information" class="section level2">
@@ -302,7 +318,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

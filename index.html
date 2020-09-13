@@ -84,14 +84,14 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The <code>rrd</code> package allows you to read data from an <a href="http://oss.oetiker.ch/rrdtool/">RRD</a> Round Robin Database.</p>
+<p>The <code>rrd</code> package allows you to read data from an <a href="https://oss.oetiker.ch/rrdtool/">RRD</a> Round Robin Database.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <div id="system-requirements" class="section level3">
 <h3 class="hasAnchor">
 <a href="#system-requirements" class="anchor"></a>System requirements</h3>
-<p>In order to build the package from source you need <a href="http://oss.oetiker.ch/rrdtool/doc/librrd.en.html">librrd</a>. Installing <a href="http://oss.oetiker.ch/rrdtool/">RRDtool</a> from your package manager will usually also install the library.</p>
+<p>In order to build the package from source you need <a href="https://oss.oetiker.ch/rrdtool/doc/librrd.en.html">librrd</a>. Installing <a href="https://oss.oetiker.ch/rrdtool/">RRDtool</a> from your package manager will usually also install the library.</p>
 <table class="table">
 <colgroup>
 <col width="15%">
@@ -157,7 +157,7 @@
 <h2 class="hasAnchor">
 <a href="#about-rrd-and-rrdtool-" class="anchor"></a>About RRD and RRDtool <img src="reference/figures/rrdtool-logo.png" align="right" height="70">
 </h2>
-<p>The <code>rrd</code> package is a wrapper around <code>RRDtool</code>. Internally it uses <a href="http://oss.oetiker.ch/rrdtool/doc/librrd.en.html">librrd</a> to import the binary data directly into R without exporting it to an intermediate format first.</p>
+<p>The <code>rrd</code> package is a wrapper around <code>RRDtool</code>. Internally it uses <a href="https://oss.oetiker.ch/rrdtool/doc/librrd.en.html">librrd</a> to import the binary data directly into R without exporting it to an intermediate format first.</p>
 <p>For an introduction to RRD database, see <a href="https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html" class="uri">https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html</a></p>
 </div>
 <div id="example" class="section level2">
@@ -208,20 +208,20 @@
 <span class="co">#&gt;  [6] "MIN3600"      "MAX3600"      "AVERAGE86400" "MIN86400"     "MAX86400"</span>
 
 <span class="kw">cpu</span>[[<span class="fl">1</span>]]
-<span class="co">#&gt; [90m# A tibble: 43,199 x 9[39m</span>
+<span class="co">#&gt; # A tibble: 43,199 x 9</span>
 <span class="co">#&gt;    timestamp              user     sys  nice  idle  wait   irq softirq   stolen</span>
-<span class="co">#&gt;    [3m[90m&lt;dttm&gt;[39m[23m                [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m    [3m[90m&lt;dbl&gt;[39m[23m</span>
-<span class="co">#&gt; [90m 1[39m 2018-04-02 [90m12:24:00[39m 0.010[4m4[24m  0.008[4m1[24m[4m1[24m     0 0.981     0     0       0 0.000[4m1[24m[4m3[24m[4m7[24m</span>
-<span class="co">#&gt; [90m 2[39m 2018-04-02 [90m12:25:00[39m 0.012[4m6[24m  0.006[4m3[24m[4m0[24m     0 0.979     0     0       0 0.001[4m9[24m[4m2[24m </span>
-<span class="co">#&gt; [90m 3[39m 2018-04-02 [90m12:26:00[39m 0.015[4m9[24m  0.008[4m0[24m[4m8[24m     0 0.976     0     0       0 0       </span>
-<span class="co">#&gt; [90m 4[39m 2018-04-02 [90m12:27:00[39m 0.008[4m5[24m[4m3[24m 0.006[4m4[24m[4m7[24m     0 0.985     0     0       0 0       </span>
-<span class="co">#&gt; [90m 5[39m 2018-04-02 [90m12:28:00[39m 0.012[4m2[24m  0.009[4m9[24m[4m9[24m     0 0.978     0     0       0 0       </span>
-<span class="co">#&gt; [90m 6[39m 2018-04-02 [90m12:29:00[39m 0.010[4m6[24m  0.006[4m0[24m[4m4[24m     0 0.983     0     0       0 0       </span>
-<span class="co">#&gt; [90m 7[39m 2018-04-02 [90m12:30:00[39m 0.014[4m7[24m  0.004[4m2[24m[4m7[24m     0 0.981     0     0       0 0.000[4m1[24m[4m3[24m[4m7[24m</span>
-<span class="co">#&gt; [90m 8[39m 2018-04-02 [90m12:31:00[39m 0.019[4m3[24m  0.007[4m6[24m[4m7[24m     0 0.971     0     0       0 0.001[4m9[24m[4m1[24m </span>
-<span class="co">#&gt; [90m 9[39m 2018-04-02 [90m12:32:00[39m 0.030[4m0[24m  0.027[4m4[24m      0 0.943     0     0       0 0       </span>
-<span class="co">#&gt; [90m10[39m 2018-04-02 [90m12:33:00[39m 0.016[4m2[24m  0.006[4m1[24m[4m7[24m     0 0.978     0     0       0 0.000[4m1[24m[4m3[24m[4m7[24m</span>
-<span class="co">#&gt; [90m# … with 43,189 more rows[39m</span>
+<span class="co">#&gt;    &lt;dttm&gt;                &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2018-04-02 12:24:00 0.0104  0.00811     0 0.981     0     0       0 0.000137</span>
+<span class="co">#&gt;  2 2018-04-02 12:25:00 0.0126  0.00630     0 0.979     0     0       0 0.00192 </span>
+<span class="co">#&gt;  3 2018-04-02 12:26:00 0.0159  0.00808     0 0.976     0     0       0 0       </span>
+<span class="co">#&gt;  4 2018-04-02 12:27:00 0.00853 0.00647     0 0.985     0     0       0 0       </span>
+<span class="co">#&gt;  5 2018-04-02 12:28:00 0.0122  0.00999     0 0.978     0     0       0 0       </span>
+<span class="co">#&gt;  6 2018-04-02 12:29:00 0.0106  0.00604     0 0.983     0     0       0 0       </span>
+<span class="co">#&gt;  7 2018-04-02 12:30:00 0.0147  0.00427     0 0.981     0     0       0 0.000137</span>
+<span class="co">#&gt;  8 2018-04-02 12:31:00 0.0193  0.00767     0 0.971     0     0       0 0.00191 </span>
+<span class="co">#&gt;  9 2018-04-02 12:32:00 0.0300  0.0274      0 0.943     0     0       0 0       </span>
+<span class="co">#&gt; 10 2018-04-02 12:33:00 0.0162  0.00617     0 0.978     0     0       0 0.000137</span>
+<span class="co">#&gt; # … with 43,189 more rows</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span>(<span class="kw">cpu</span><span class="op">$</span><span class="kw">AVERAGE60</span><span class="op">$</span><span class="kw">sys</span>)
 <span class="co">#&gt; [1] 0.0014390667 0.0020080000 0.0005689333 0.0000000000 0.0014390667</span>
@@ -235,24 +235,26 @@
                      end = <span class="kw">end_time</span>)
 
 <span class="kw">avg_60</span>
-<span class="co">#&gt; [90m# A tibble: 1,440 x 9[39m</span>
+<span class="co">#&gt; # A tibble: 1,440 x 9</span>
 <span class="co">#&gt;    timestamp              user     sys  nice  idle    wait   irq softirq  stolen</span>
-<span class="co">#&gt;    [3m[90m&lt;dttm&gt;[39m[23m                [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m</span>
-<span class="co">#&gt; [90m 1[39m 2018-05-01 [90m00:01:00[39m 0.004[4m5[24m[4m8[24m 2.01[90me[39m[31m-3[39m     0 0.992 0.  [90m [39m       0       0 1.44[90me[39m[31m-3[39m</span>
-<span class="co">#&gt; [90m 2[39m 2018-05-01 [90m00:02:00[39m 0.002[4m5[24m[4m8[24m 5.70[90me[39m[31m-4[39m     0 0.996 0.  [90m [39m       0       0 5.70[90me[39m[31m-4[39m</span>
-<span class="co">#&gt; [90m 3[39m 2018-05-01 [90m00:03:00[39m 0.006[4m3[24m[4m3[24m 1.44[90me[39m[31m-3[39m     0 0.992 0.  [90m [39m       0       0 0.  [90m [39m  </span>
-<span class="co">#&gt; [90m 4[39m 2018-05-01 [90m00:04:00[39m 0.005[4m1[24m[4m5[24m 2.01[90me[39m[31m-3[39m     0 0.991 0.  [90m [39m       0       0 1.44[90me[39m[31m-3[39m</span>
-<span class="co">#&gt; [90m 5[39m 2018-05-01 [90m00:05:00[39m 0.004[4m0[24m[4m2[24m 5.69[90me[39m[31m-4[39m     0 0.995 0.  [90m [39m       0       0 5.69[90me[39m[31m-4[39m</span>
-<span class="co">#&gt; [90m 6[39m 2018-05-01 [90m00:06:00[39m 0.006[4m8[24m[4m9[24m 1.44[90me[39m[31m-3[39m     0 0.992 0.  [90m [39m       0       0 0.  [90m [39m  </span>
-<span class="co">#&gt; [90m 7[39m 2018-05-01 [90m00:07:00[39m 0.003[4m7[24m[4m1[24m 2.01[90me[39m[31m-3[39m     0 0.993 1.44[90me[39m[31m-3[39m     0       0 0.  [90m [39m  </span>
-<span class="co">#&gt; [90m 8[39m 2018-05-01 [90m00:08:00[39m 0.004[4m8[24m[4m8[24m 2.01[90me[39m[31m-3[39m     0 0.993 5.69[90me[39m[31m-4[39m     0       0 0.  [90m [39m  </span>
-<span class="co">#&gt; [90m 9[39m 2018-05-01 [90m00:09:00[39m 0.007[4m4[24m[4m8[24m 5.68[90me[39m[31m-4[39m     0 0.992 0.  [90m [39m       0       0 0.  [90m [39m  </span>
-<span class="co">#&gt; [90m10[39m 2018-05-01 [90m00:10:00[39m 0.005[4m1[24m[4m6[24m 0.  [90m [39m       0 0.995 0.  [90m [39m       0       0 0.  [90m [39m  </span>
-<span class="co">#&gt; [90m# … with 1,430 more rows[39m</span>
+<span class="co">#&gt;    &lt;dttm&gt;                &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2018-05-01 00:01:00 0.00458 2.01e-3     0 0.992 0.          0       0 1.44e-3</span>
+<span class="co">#&gt;  2 2018-05-01 00:02:00 0.00258 5.70e-4     0 0.996 0.          0       0 5.70e-4</span>
+<span class="co">#&gt;  3 2018-05-01 00:03:00 0.00633 1.44e-3     0 0.992 0.          0       0 0.     </span>
+<span class="co">#&gt;  4 2018-05-01 00:04:00 0.00515 2.01e-3     0 0.991 0.          0       0 1.44e-3</span>
+<span class="co">#&gt;  5 2018-05-01 00:05:00 0.00402 5.69e-4     0 0.995 0.          0       0 5.69e-4</span>
+<span class="co">#&gt;  6 2018-05-01 00:06:00 0.00689 1.44e-3     0 0.992 0.          0       0 0.     </span>
+<span class="co">#&gt;  7 2018-05-01 00:07:00 0.00371 2.01e-3     0 0.993 1.44e-3     0       0 0.     </span>
+<span class="co">#&gt;  8 2018-05-01 00:08:00 0.00488 2.01e-3     0 0.993 5.69e-4     0       0 0.     </span>
+<span class="co">#&gt;  9 2018-05-01 00:09:00 0.00748 5.68e-4     0 0.992 0.          0       0 0.     </span>
+<span class="co">#&gt; 10 2018-05-01 00:10:00 0.00516 0.          0 0.995 0.          0       0 0.     </span>
+<span class="co">#&gt; # … with 1,430 more rows</span>
 </pre></div>
 <p>And you can easily plot using your favourite packages:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span>)
+<span class="co">#&gt; Warning: replacing previous import 'vctrs::data_frame' by 'tibble::data_frame'</span>
+<span class="co">#&gt; when loading 'dplyr'</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">avg_60</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">timestamp</span>, y = <span class="kw">user</span>)) <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>() <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">stat_smooth</a></span>(method = <span class="st">"loess"</span>, span = <span class="fl">0.125</span>, se = <span class="fl">FALSE</span>) <span class="op">+</span>
@@ -264,7 +266,7 @@
 <div id="more-information" class="section level2">
 <h2 class="hasAnchor">
 <a href="#more-information" class="anchor"></a>More information</h2>
-<p>For more information on <code>rrdtool</code> and the <code>rrd</code> format please refer to the official <a href="http://oss.oetiker.ch/rrdtool/doc/index.en.html">rrdtool documentation</a> and <a href="http://oss.oetiker.ch/rrdtool/tut/index.en.html">tutorials</a>.</p>
+<p>For more information on <code>rrdtool</code> and the <code>rrd</code> format please refer to the official <a href="https://oss.oetiker.ch/rrdtool/doc/index.en.html">rrdtool documentation</a> and <a href="https://oss.oetiker.ch/rrdtool/tut/index.en.html">tutorials</a>.</p>
 <p>You can also read a more in-depth description of the package in an <a href="https://rviews.rstudio.com/">R Views</a> blog post <a href="https://rviews.rstudio.com/2018/06/20/reading-rrd-files/">Reading and analysing log files in the RRD database format</a>.</p>
 </div>
 </div>

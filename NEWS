@@ -1,6 +1,12 @@
-rrd-0.2.2 (2019-07-05)
+rrd-0.2.3 (2020-09-13)
 =========
 
+* No functional changes
+* Upgrade tests to `testthat_3.0.0`
+
+
+rrd-0.2.2 (2019-07-05)
+=========
 
 * Bug fix on larger RRD files that cause corruption and segfaults, provided by Steven Rezsutek (#8)
 * Provided configuration that tests for installation on various platforms (using `anticonf` by Jeroen Ooms)

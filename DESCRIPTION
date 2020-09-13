@@ -16,7 +16,7 @@ Description: Makes it easy to import the data from a 'RRD' database
 URL: https://github.com/andrie/rrd/, https://andrie.github.io/rrd/
 BugReports: https://github.com/andrie/rrd/issues
 SystemRequirements: The package depends on libraries from the RRD project
-    <http://oss.oetiker.ch/rrdtool/>. On Debian-based systems, install 'librrd-dev',
+    <https://oss.oetiker.ch/rrdtool/>. On Debian-based systems, install 'librrd-dev',
     on CentOS based systems install 'rrdtool-devel', and on Fedora-based systems
     install 'rrdtool-devel' <https://apps.fedoraproject.org/packages/rrdtool-devel>.
     For more information, see the README.

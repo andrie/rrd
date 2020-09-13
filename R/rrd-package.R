@@ -6,7 +6,7 @@
 #' * [read_rrd()] to read an entire RRD file, including all the archives
 #' * [read_rra()] to extract a single RRA (round robin archive) from an RRD file
 #' 
-#' For more information on `RRdtool` and the `RRD` format please refer to the official RRDtool [documentation](http://oss.oetiker.ch/rrdtool/doc/index.en.html) and [tutorials](http://oss.oetiker.ch/rrdtool/tut/index.en.html).
+#' For more information on `RRdtool` and the `RRD` format please refer to the official RRDtool [documentation](https://oss.oetiker.ch/rrdtool/doc/index.en.html) and [tutorials](https://oss.oetiker.ch/rrdtool/tut/index.en.html).
 #' 
 #' You can also read a more in-depth description of the package in an [R Views](https://rviews.rstudio.com/) blog post [Reading and analysing log files in the RRD database format](https://rviews.rstudio.com/2018/06/20/reading-rrd-files/).
 #' 
@@ -24,7 +24,7 @@
 #' @useDynLib rrd, .registration = TRUE
 #'  
 # @seealso
-#' @references <http://oss.oetiker.ch/rrdtool/doc/index.en.html>
+#' @references <https://oss.oetiker.ch/rrdtool/doc/index.en.html>
 #' 
 #' @keywords package rrd rrdtool librrd
 #' 

@@ -26,7 +26,7 @@ Exposes the following functions:
 \item \code{\link[=read_rra]{read_rra()}} to extract a single RRA (round robin archive) from an RRD file
 }
 
-For more information on \code{RRdtool} and the \code{RRD} format please refer to the official RRDtool \href{http://oss.oetiker.ch/rrdtool/doc/index.en.html}{documentation} and \href{http://oss.oetiker.ch/rrdtool/tut/index.en.html}{tutorials}.
+For more information on \code{RRdtool} and the \code{RRD} format please refer to the official RRDtool \href{https://oss.oetiker.ch/rrdtool/doc/index.en.html}{documentation} and \href{https://oss.oetiker.ch/rrdtool/tut/index.en.html}{tutorials}.
 
 You can also read a more in-depth description of the package in an \href{https://rviews.rstudio.com/}{R Views} blog post \href{https://rviews.rstudio.com/2018/06/20/reading-rrd-files/}{Reading and analysing log files in the RRD database format}.
 }
@@ -40,7 +40,7 @@ Andrie de Vries became maintainer of the package early in 2018, and prepared the
 }
 
 \references{
-\url{http://oss.oetiker.ch/rrdtool/doc/index.en.html}
+\url{https://oss.oetiker.ch/rrdtool/doc/index.en.html}
 }
 \seealso{
 Useful links:

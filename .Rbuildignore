@@ -15,3 +15,4 @@ dev
 ^rrdtool.svg$
 ^CRAN-RELEASE$
 ^\.github$
+^configure.log$

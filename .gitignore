@@ -8,3 +8,5 @@ src/*.dll
 
 docs
 src/Makevars
+configure.log
+autobrew

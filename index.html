@@ -31,6 +31,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -43,26 +45,20 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">rrd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.3</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/andrie/rrd/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/andrie/rrd/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -78,20 +74,19 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="rrd-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#rrd-" class="anchor"></a>rrd <img src="reference/figures/logo.svg" align="right" height="139">
+<div class="section level1">
+<div class="page-header"><h1 id="rrd-">rrd <img src="reference/figures/logo.svg" align="right" height="139"><a class="anchor" aria-label="anchor" href="#rrd-"></a>
 </h1></div>
 <!-- badges: start -->
 
-<p>The <code>rrd</code> package allows you to read data from an <a href="https://oss.oetiker.ch/rrdtool/">RRD</a> Round Robin Database.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<div id="system-requirements" class="section level3">
-<h3 class="hasAnchor">
-<a href="#system-requirements" class="anchor"></a>System requirements</h3>
-<p>In order to build the package from source you need <a href="https://oss.oetiker.ch/rrdtool/doc/librrd.en.html">librrd</a>. Installing <a href="https://oss.oetiker.ch/rrdtool/">RRDtool</a> from your package manager will usually also install the library.</p>
+<p>The <code>rrd</code> package allows you to read data from an <a href="https://oss.oetiker.ch/rrdtool/" class="external-link">RRD</a> Round Robin Database.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<div class="section level3">
+<h3 id="system-requirements">System requirements<a class="anchor" aria-label="anchor" href="#system-requirements"></a>
+</h3>
+<p>In order to build the package from source you need <a href="https://oss.oetiker.ch/rrdtool/doc/librrd.en.html" class="external-link">librrd</a>. Installing <a href="https://oss.oetiker.ch/rrdtool/" class="external-link">RRDtool</a> from your package manager will usually also install the library.</p>
 <table class="table">
 <colgroup>
 <col width="15%">
@@ -117,13 +112,13 @@
 <tr class="odd">
 <td>Fedora</td>
 <td><code>yum install rrdtool-devel</code></td>
-<td><a href="https://apps.fedoraproject.org/packages/rrdtool-devel" class="uri">https://apps.fedoraproject.org/packages/rrdtool-devel</a></td>
+<td><a href="https://apps.fedoraproject.org/packages/rrdtool-devel" class="external-link uri">https://apps.fedoraproject.org/packages/rrdtool-devel</a></td>
 </tr>
 <tr class="even">
 <td>Solaris / CSW</td>
 <td>Install <code>rrdtool</code>
 </td>
-<td><a href="https://www.opencsw.org/packages/rrdtool/" class="uri">https://www.opencsw.org/packages/rrdtool/</a></td>
+<td><a href="https://www.opencsw.org/packages/rrdtool/" class="external-link uri">https://www.opencsw.org/packages/rrdtool/</a></td>
 </tr>
 <tr class="odd">
 <td>OSX</td>
@@ -139,39 +134,35 @@
 </table>
 <p>Note: on OSX you may have to update <code>xcode</code>, using <code>xcode-select --install</code>.</p>
 </div>
-<div id="package-installation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#package-installation" class="anchor"></a>Package installation</h3>
+<div class="section level3">
+<h3 id="package-installation">Package installation<a class="anchor" aria-label="anchor" href="#package-installation"></a>
+</h3>
 <p>You can install the stable version of the package from CRAN:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"rrd"</span>)
-</pre></div>
-<p>And the development version from <a href="https://github.com/">GitHub</a>:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="co"># install.packages("remotes")</span>
-<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"andrie/rrd"</span>)
-</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"rrd"</span><span class="op">)</span></code></pre></div>
+<p>And the development version from <a href="https://github.com/" class="external-link">GitHub</a>:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"andrie/rrd"</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
-<div id="about-rrd-and-rrdtool-" class="section level2">
-<h2 class="hasAnchor">
-<a href="#about-rrd-and-rrdtool-" class="anchor"></a>About RRD and RRDtool <img src="reference/figures/rrdtool-logo.png" align="right" height="70">
+<div class="section level2">
+<h2 id="about-rrd-and-rrdtool-">About RRD and RRDtool <img src="reference/figures/rrdtool-logo.png" align="right" height="70"><a class="anchor" aria-label="anchor" href="#about-rrd-and-rrdtool-"></a>
 </h2>
-<p>The <code>rrd</code> package is a wrapper around <code>RRDtool</code>. Internally it uses <a href="https://oss.oetiker.ch/rrdtool/doc/librrd.en.html">librrd</a> to import the binary data directly into R without exporting it to an intermediate format first.</p>
-<p>For an introduction to RRD database, see <a href="https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html" class="uri">https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html</a></p>
+<p>The <code>rrd</code> package is a wrapper around <code>RRDtool</code>. Internally it uses <a href="https://oss.oetiker.ch/rrdtool/doc/librrd.en.html" class="external-link">librrd</a> to import the binary data directly into R without exporting it to an intermediate format first.</p>
+<p>For an introduction to RRD database, see <a href="https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html" class="external-link uri">https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html</a></p>
 </div>
-<div id="example" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
 <p>The package contains some example RRD files that originated in an instance of RStudio Connect. In this example, you analyse CPU data in the file <code>cpu-0.rrd</code>.</p>
 <p>Load the package and assign the location of the <code>cpu-0.rrd</code> file to a variable:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/andrie/rrd">rrd</a></span>)
-<span class="kw">rrd_cpu_0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata/cpu-0.rrd"</span>, package = <span class="st">"rrd"</span>)
-</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/andrie/rrd/" class="external-link">rrd</a></span><span class="op">)</span>
+<span class="va">rrd_cpu_0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/cpu-0.rrd"</span>, package <span class="op">=</span> <span class="st">"rrd"</span><span class="op">)</span></code></pre></div>
 <p>To describe the contents of an RRD file, use <code><a href="reference/describe_rrd.html">describe_rrd()</a></code>:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="reference/describe_rrd.html">describe_rrd</a></span>(<span class="kw">rrd_cpu_0</span>)
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/describe_rrd.html">describe_rrd</a></span><span class="op">(</span><span class="va">rrd_cpu_0</span><span class="op">)</span>
 <span class="co">#&gt; An RRD file with 10 RRA arrays and step size 60</span>
 <span class="co">#&gt; [1] AVERAGE_60 (43200 rows)</span>
 <span class="co">#&gt; [2] AVERAGE_300 (25920 rows)</span>
@@ -182,13 +173,12 @@
 <span class="co">#&gt; [7] MAX_3600 (8760 rows)</span>
 <span class="co">#&gt; [8] AVERAGE_86400 (1825 rows)</span>
 <span class="co">#&gt; [9] MIN_86400 (1825 rows)</span>
-<span class="co">#&gt; [10] MAX_86400 (1825 rows)</span>
-</pre></div>
+<span class="co">#&gt; [10] MAX_86400 (1825 rows)</span></code></pre></div>
 <p>To read an entire RRD file, i.e. all of the RRA archives, use <code><a href="reference/read_rrd.html">read_rrd()</a></code>. This returns a list of <code>tibble</code> objects:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">cpu</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_rrd.html">read_rrd</a></span>(<span class="kw">rrd_cpu_0</span>)
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">cpu</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_rrd.html">read_rrd</a></span><span class="op">(</span><span class="va">rrd_cpu_0</span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="kw">cpu</span>, max.level = <span class="fl">1</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">cpu</span>, max.level <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 <span class="co">#&gt; List of 10</span>
 <span class="co">#&gt;  $ AVERAGE60   : tibble [43,199 × 9] (S3: tbl_df/tbl/data.frame)</span>
 <span class="co">#&gt;  $ AVERAGE300  : tibble [25,919 × 9] (S3: tbl_df/tbl/data.frame)</span>
@@ -199,128 +189,132 @@
 <span class="co">#&gt;  $ MAX3600     : tibble [8,759 × 9] (S3: tbl_df/tbl/data.frame)</span>
 <span class="co">#&gt;  $ AVERAGE86400: tibble [1,824 × 9] (S3: tbl_df/tbl/data.frame)</span>
 <span class="co">#&gt;  $ MIN86400    : tibble [1,824 × 9] (S3: tbl_df/tbl/data.frame)</span>
-<span class="co">#&gt;  $ MAX86400    : tibble [1,824 × 9] (S3: tbl_df/tbl/data.frame)</span>
-</pre></div>
+<span class="co">#&gt;  $ MAX86400    : tibble [1,824 × 9] (S3: tbl_df/tbl/data.frame)</span></code></pre></div>
 <p>Since the resulting object is a list of <code>tibble</code>s, you can easily work with individual data frames:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="kw">cpu</span>)
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">cpu</span><span class="op">)</span>
 <span class="co">#&gt;  [1] "AVERAGE60"    "AVERAGE300"   "MIN300"       "MAX300"       "AVERAGE3600" </span>
 <span class="co">#&gt;  [6] "MIN3600"      "MAX3600"      "AVERAGE86400" "MIN86400"     "MAX86400"</span>
 
-<span class="kw">cpu</span>[[<span class="fl">1</span>]]
-<span class="co">#&gt; # A tibble: 43,199 x 9</span>
+<span class="va">cpu</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
+<span class="co">#&gt; [90m# A tibble: 43,199 x 9[39m</span>
 <span class="co">#&gt;    timestamp              user     sys  nice  idle  wait   irq softirq   stolen</span>
-<span class="co">#&gt;    &lt;dttm&gt;                &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2018-04-02 12:24:00 0.0104  0.00811     0 0.981     0     0       0 0.000137</span>
-<span class="co">#&gt;  2 2018-04-02 12:25:00 0.0126  0.00630     0 0.979     0     0       0 0.00192 </span>
-<span class="co">#&gt;  3 2018-04-02 12:26:00 0.0159  0.00808     0 0.976     0     0       0 0       </span>
-<span class="co">#&gt;  4 2018-04-02 12:27:00 0.00853 0.00647     0 0.985     0     0       0 0       </span>
-<span class="co">#&gt;  5 2018-04-02 12:28:00 0.0122  0.00999     0 0.978     0     0       0 0       </span>
-<span class="co">#&gt;  6 2018-04-02 12:29:00 0.0106  0.00604     0 0.983     0     0       0 0       </span>
-<span class="co">#&gt;  7 2018-04-02 12:30:00 0.0147  0.00427     0 0.981     0     0       0 0.000137</span>
-<span class="co">#&gt;  8 2018-04-02 12:31:00 0.0193  0.00767     0 0.971     0     0       0 0.00191 </span>
-<span class="co">#&gt;  9 2018-04-02 12:32:00 0.0300  0.0274      0 0.943     0     0       0 0       </span>
-<span class="co">#&gt; 10 2018-04-02 12:33:00 0.0162  0.00617     0 0.978     0     0       0 0.000137</span>
-<span class="co">#&gt; # … with 43,189 more rows</span>
+<span class="co">#&gt;    [3m[90m&lt;dttm&gt;[39m[23m                [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m    [3m[90m&lt;dbl&gt;[39m[23m</span>
+<span class="co">#&gt; [90m 1[39m 2018-04-02 [90m12:24:00[39m 0.010[4m4[24m  0.008[4m1[24m[4m1[24m     0 0.981     0     0       0 0.000[4m1[24m[4m3[24m[4m7[24m</span>
+<span class="co">#&gt; [90m 2[39m 2018-04-02 [90m12:25:00[39m 0.012[4m6[24m  0.006[4m3[24m[4m0[24m     0 0.979     0     0       0 0.001[4m9[24m[4m2[24m </span>
+<span class="co">#&gt; [90m 3[39m 2018-04-02 [90m12:26:00[39m 0.015[4m9[24m  0.008[4m0[24m[4m8[24m     0 0.976     0     0       0 0       </span>
+<span class="co">#&gt; [90m 4[39m 2018-04-02 [90m12:27:00[39m 0.008[4m5[24m[4m3[24m 0.006[4m4[24m[4m7[24m     0 0.985     0     0       0 0       </span>
+<span class="co">#&gt; [90m 5[39m 2018-04-02 [90m12:28:00[39m 0.012[4m2[24m  0.009[4m9[24m[4m9[24m     0 0.978     0     0       0 0       </span>
+<span class="co">#&gt; [90m 6[39m 2018-04-02 [90m12:29:00[39m 0.010[4m6[24m  0.006[4m0[24m[4m4[24m     0 0.983     0     0       0 0       </span>
+<span class="co">#&gt; [90m 7[39m 2018-04-02 [90m12:30:00[39m 0.014[4m7[24m  0.004[4m2[24m[4m7[24m     0 0.981     0     0       0 0.000[4m1[24m[4m3[24m[4m7[24m</span>
+<span class="co">#&gt; [90m 8[39m 2018-04-02 [90m12:31:00[39m 0.019[4m3[24m  0.007[4m6[24m[4m7[24m     0 0.971     0     0       0 0.001[4m9[24m[4m1[24m </span>
+<span class="co">#&gt; [90m 9[39m 2018-04-02 [90m12:32:00[39m 0.030[4m0[24m  0.027[4m4[24m      0 0.943     0     0       0 0       </span>
+<span class="co">#&gt; [90m10[39m 2018-04-02 [90m12:33:00[39m 0.016[4m2[24m  0.006[4m1[24m[4m7[24m     0 0.978     0     0       0 0.000[4m1[24m[4m3[24m[4m7[24m</span>
+<span class="co">#&gt; [90m# … with 43,189 more rows[39m</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span>(<span class="kw">cpu</span><span class="op">$</span><span class="kw">AVERAGE60</span><span class="op">$</span><span class="kw">sys</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">cpu</span><span class="op">$</span><span class="va">AVERAGE60</span><span class="op">$</span><span class="va">sys</span><span class="op">)</span>
 <span class="co">#&gt; [1] 0.0014390667 0.0020080000 0.0005689333 0.0000000000 0.0014390667</span>
-<span class="co">#&gt; [6] 0.0005689333</span>
-</pre></div>
+<span class="co">#&gt; [6] 0.0005689333</span></code></pre></div>
 <p>To read a single RRA archive from an RRD file, use <code><a href="reference/read_rra.html">read_rra()</a></code>. To use this function, you must specify several arguments that define the specific data to retrieve. This includes the consolidation function (e.g. “AVERAGE”) and time step (e.g. 60), the <code>end</code> time. You must also specifiy either the <code>start</code> time, or the number of steps, <code>n_steps</code>.</p>
 <p>In this example, you extract the average for 1 minute periods (<code>step = 60</code>), for one entire day (<code>n_steps = 24 * 60</code>):</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="kw">end_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span>(<span class="st">"2018-05-02"</span>) <span class="co"># timestamp with data in example</span>
-<span class="kw">avg_60</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_rra.html">read_rra</a></span>(<span class="kw">rrd_cpu_0</span>, cf = <span class="st">"AVERAGE"</span>, step = <span class="fl">60</span>, n_steps = <span class="fl">24</span> <span class="op">*</span> <span class="fl">60</span>,
-                     end = <span class="kw">end_time</span>)
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">end_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="st">"2018-05-02"</span><span class="op">)</span> <span class="co"># timestamp with data in example</span>
+<span class="va">avg_60</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_rra.html">read_rra</a></span><span class="op">(</span><span class="va">rrd_cpu_0</span>, cf <span class="op">=</span> <span class="st">"AVERAGE"</span>, step <span class="op">=</span> <span class="fl">60</span>, n_steps <span class="op">=</span> <span class="fl">24</span> <span class="op">*</span> <span class="fl">60</span>,
+                     end <span class="op">=</span> <span class="va">end_time</span><span class="op">)</span>
 
-<span class="kw">avg_60</span>
-<span class="co">#&gt; # A tibble: 1,440 x 9</span>
+<span class="va">avg_60</span>
+<span class="co">#&gt; [90m# A tibble: 1,440 x 9[39m</span>
 <span class="co">#&gt;    timestamp              user     sys  nice  idle    wait   irq softirq  stolen</span>
-<span class="co">#&gt;    &lt;dttm&gt;                &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 2018-05-01 00:01:00 0.00458 2.01e-3     0 0.992 0.          0       0 1.44e-3</span>
-<span class="co">#&gt;  2 2018-05-01 00:02:00 0.00258 5.70e-4     0 0.996 0.          0       0 5.70e-4</span>
-<span class="co">#&gt;  3 2018-05-01 00:03:00 0.00633 1.44e-3     0 0.992 0.          0       0 0.     </span>
-<span class="co">#&gt;  4 2018-05-01 00:04:00 0.00515 2.01e-3     0 0.991 0.          0       0 1.44e-3</span>
-<span class="co">#&gt;  5 2018-05-01 00:05:00 0.00402 5.69e-4     0 0.995 0.          0       0 5.69e-4</span>
-<span class="co">#&gt;  6 2018-05-01 00:06:00 0.00689 1.44e-3     0 0.992 0.          0       0 0.     </span>
-<span class="co">#&gt;  7 2018-05-01 00:07:00 0.00371 2.01e-3     0 0.993 1.44e-3     0       0 0.     </span>
-<span class="co">#&gt;  8 2018-05-01 00:08:00 0.00488 2.01e-3     0 0.993 5.69e-4     0       0 0.     </span>
-<span class="co">#&gt;  9 2018-05-01 00:09:00 0.00748 5.68e-4     0 0.992 0.          0       0 0.     </span>
-<span class="co">#&gt; 10 2018-05-01 00:10:00 0.00516 0.          0 0.995 0.          0       0 0.     </span>
-<span class="co">#&gt; # … with 1,430 more rows</span>
-</pre></div>
+<span class="co">#&gt;    [3m[90m&lt;dttm&gt;[39m[23m                [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m   [3m[90m&lt;dbl&gt;[39m[23m</span>
+<span class="co">#&gt; [90m 1[39m 2018-05-01 [90m00:01:00[39m 0.004[4m5[24m[4m8[24m 2.01[90me[39m[31m-3[39m     0 0.992 0.  [90m [39m       0       0 1.44[90me[39m[31m-3[39m</span>
+<span class="co">#&gt; [90m 2[39m 2018-05-01 [90m00:02:00[39m 0.002[4m5[24m[4m8[24m 5.70[90me[39m[31m-4[39m     0 0.996 0.  [90m [39m       0       0 5.70[90me[39m[31m-4[39m</span>
+<span class="co">#&gt; [90m 3[39m 2018-05-01 [90m00:03:00[39m 0.006[4m3[24m[4m3[24m 1.44[90me[39m[31m-3[39m     0 0.992 0.  [90m [39m       0       0 0.  [90m [39m  </span>
+<span class="co">#&gt; [90m 4[39m 2018-05-01 [90m00:04:00[39m 0.005[4m1[24m[4m5[24m 2.01[90me[39m[31m-3[39m     0 0.991 0.  [90m [39m       0       0 1.44[90me[39m[31m-3[39m</span>
+<span class="co">#&gt; [90m 5[39m 2018-05-01 [90m00:05:00[39m 0.004[4m0[24m[4m2[24m 5.69[90me[39m[31m-4[39m     0 0.995 0.  [90m [39m       0       0 5.69[90me[39m[31m-4[39m</span>
+<span class="co">#&gt; [90m 6[39m 2018-05-01 [90m00:06:00[39m 0.006[4m8[24m[4m9[24m 1.44[90me[39m[31m-3[39m     0 0.992 0.  [90m [39m       0       0 0.  [90m [39m  </span>
+<span class="co">#&gt; [90m 7[39m 2018-05-01 [90m00:07:00[39m 0.003[4m7[24m[4m1[24m 2.01[90me[39m[31m-3[39m     0 0.993 1.44[90me[39m[31m-3[39m     0       0 0.  [90m [39m  </span>
+<span class="co">#&gt; [90m 8[39m 2018-05-01 [90m00:08:00[39m 0.004[4m8[24m[4m8[24m 2.01[90me[39m[31m-3[39m     0 0.993 5.69[90me[39m[31m-4[39m     0       0 0.  [90m [39m  </span>
+<span class="co">#&gt; [90m 9[39m 2018-05-01 [90m00:09:00[39m 0.007[4m4[24m[4m8[24m 5.68[90me[39m[31m-4[39m     0 0.992 0.  [90m [39m       0       0 0.  [90m [39m  </span>
+<span class="co">#&gt; [90m10[39m 2018-05-01 [90m00:10:00[39m 0.005[4m1[24m[4m6[24m 0.  [90m [39m       0 0.995 0.  [90m [39m       0       0 0.  [90m [39m  </span>
+<span class="co">#&gt; [90m# … with 1,430 more rows[39m</span></code></pre></div>
 <p>And you can easily plot using your favourite packages:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span>)
-<span class="co">#&gt; Warning: replacing previous import 'vctrs::data_frame' by 'tibble::data_frame'</span>
-<span class="co">#&gt; when loading 'dplyr'</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">avg_60</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">timestamp</span>, y = <span class="kw">user</span>)) <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span>() <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">stat_smooth</a></span>(method = <span class="st">"loess"</span>, span = <span class="fl">0.125</span>, se = <span class="fl">FALSE</span>) <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span>(<span class="st">"CPU0 usage, data read from RRD file"</span>)
-<span class="co">#&gt; `geom_smooth()` using formula 'y ~ x'</span>
-</pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">avg_60</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">timestamp</span>, y <span class="op">=</span> <span class="va">user</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">stat_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"loess"</span>, span <span class="op">=</span> <span class="fl">0.125</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"CPU0 usage, data read from RRD file"</span><span class="op">)</span>
+<span class="co">#&gt; `geom_smooth()` using formula 'y ~ x'</span></code></pre></div>
 <p><img src="reference/figures/README-plot-1.png" width="90%"></p>
 </div>
-<div id="more-information" class="section level2">
-<h2 class="hasAnchor">
-<a href="#more-information" class="anchor"></a>More information</h2>
-<p>For more information on <code>rrdtool</code> and the <code>rrd</code> format please refer to the official <a href="https://oss.oetiker.ch/rrdtool/doc/index.en.html">rrdtool documentation</a> and <a href="https://oss.oetiker.ch/rrdtool/tut/index.en.html">tutorials</a>.</p>
-<p>You can also read a more in-depth description of the package in an <a href="https://rviews.rstudio.com/">R Views</a> blog post <a href="https://rviews.rstudio.com/2018/06/20/reading-rrd-files/">Reading and analysing log files in the RRD database format</a>.</p>
+<div class="section level2">
+<h2 id="more-information">More information<a class="anchor" aria-label="anchor" href="#more-information"></a>
+</h2>
+<p>For more information on <code>rrdtool</code> and the <code>rrd</code> format please refer to the official <a href="https://oss.oetiker.ch/rrdtool/doc/index.en.html" class="external-link">rrdtool documentation</a> and <a href="https://oss.oetiker.ch/rrdtool/tut/index.en.html" class="external-link">tutorials</a>.</p>
+<p>You can also read a more in-depth description of the package in an <a href="https://rviews.rstudio.com/" class="external-link">R Views</a> blog post <a href="https://rviews.rstudio.com/2018/06/20/reading-rrd-files/" class="external-link">Reading and analysing log files in the RRD database format</a>.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=rrd">https://​cloud.r-project.org/​package=rrd</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/andrie/rrd/">https://​github.com/​andrie/​rrd/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/andrie/rrd/issues">https://​github.com/​andrie/​rrd/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>Andrie de Vries <br><small class="roles"> Maintainer, copyright holder </small>  </li>
-<li>Plamen Dimitrov <br><small class="roles"> Author, copyright holder </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="https://cloud.r-project.org/package=rrd" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/andrie/rrd/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/andrie/rrd/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/andrie/rrd/actions"><img src="https://github.com/andrie/rrd/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://cran.r-project.org/package=rrd"><img src="https://www.r-pkg.org/badges/version/rrd" alt="CRAN status"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
-<li><a href="http://www.r-pkg.org/pkg/rrd"><img src="http://www.r-pkg.org/badges/version/rrd"></a></li>
-<li><a href="http://www.r-pkg.org/pkg/rrd"><img src="http://cranlogs.r-pkg.org/badges/rrd" alt="CRAN RStudio mirror downloads"></a></li>
-<li><a href="https://codecov.io/gh/andrie/rrd?branch=master"><img src="https://codecov.io/gh/andrie/rrd/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing rrd</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Andrie de Vries <br><small class="roles"> Maintainer, copyright holder </small>  </li>
+<li>Plamen Dimitrov <br><small class="roles"> Author, copyright holder </small>  </li>
+<li><a href="authors.html">More about authors...</a></li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/andrie/rrd/actions" class="external-link"><img src="https://github.com/andrie/rrd/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://cran.r-project.org/package=rrd" class="external-link"><img src="https://www.r-pkg.org/badges/version/rrd" alt="CRAN status"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
+<li><a href="http://www.r-pkg.org/pkg/rrd" class="external-link"><img src="http://www.r-pkg.org/badges/version/rrd"></a></li>
+<li><a href="http://www.r-pkg.org/pkg/rrd" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/rrd" alt="CRAN RStudio mirror downloads"></a></li>
+<li><a href="https://codecov.io/gh/andrie/rrd?branch=master" class="external-link"><img src="https://codecov.io/gh/andrie/rrd/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Andrie de Vries, Plamen Dimitrov.</p>
+  <p></p>
+<p>Developed by Andrie de Vries, Plamen Dimitrov.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
@@ -328,6 +322,8 @@
 
   
 
+
+  
 
   </body>
 </html>

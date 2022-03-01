@@ -9,12 +9,12 @@
 status](https://github.com/andrie/rrd/workflows/R-CMD-check/badge.svg)](https://github.com/andrie/rrd/actions)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/package=rrd)
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![](http://www.r-pkg.org/badges/version/rrd)](http://www.r-pkg.org/pkg/rrd)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![](http://www.r-pkg.org/badges/version/rrd)](https://www.r-pkg.org:443/pkg/rrd)
 [![CRAN RStudio mirror
-downloads](http://cranlogs.r-pkg.org/badges/rrd)](http://www.r-pkg.org/pkg/rrd)
+downloads](http://cranlogs.r-pkg.org/badges/rrd)](https://www.r-pkg.org:443/pkg/rrd)
 [![Codecov test
-coverage](https://codecov.io/gh/andrie/rrd/branch/main/graph/badge.svg)](https://codecov.io/gh/andrie/rrd?branch=main)
+coverage](https://codecov.io/gh/andrie/rrd/branch/main/graph/badge.svg)](https://app.codecov.io/gh/andrie/rrd?branch=main)
 <!-- badges: end -->
 
 The `rrd` package allows you to read data from an
@@ -29,14 +29,14 @@ In order to build the package from source you need
 [RRDtool](https://oss.oetiker.ch/rrdtool/) from your package manager
 will usually also install the library.
 
-| Platform        | Installation                 | Reference                                               |
-|-----------------|------------------------------|---------------------------------------------------------|
-| Debian / Ubuntu | `apt-get install librrd-dev` |                                                         |
-| RHEL / CentOS   | `yum install rrdtool-devel`  |                                                         |
-| Fedora          | `yum install rrdtool-devel`  | <https://apps.fedoraproject.org/packages/rrdtool-devel> |
-| Solaris / CSW   | Install `rrdtool`            | <https://www.opencsw.org/packages/rrdtool/>             |
-| OSX             | `brew install rrdtool`       |                                                         |
-| Windows         | Not available                |                                                         |
+| Platform        | Installation                 |
+|-----------------|------------------------------|
+| Debian / Ubuntu | `apt-get install librrd-dev` |
+| RHEL / CentOS   | `yum install rrdtool-devel`  |
+| Fedora          | `yum install rrdtool-devel`  |
+| Solaris / CSW   | Install `rrdtool`            |
+| OSX             | `brew install rrdtool`       |
+| Windows         | Not available                |
 
 Note: on OSX you may have to update `xcode`, using
 `xcode-select --install`.

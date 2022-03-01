@@ -30,7 +30,7 @@ In order to build the package from source you need
 will usually also install the library.
 
 | Platform        | Installation                 | Reference                                               |
-|-----------------|------------------------------|---------------------------------------------------------|
+| --------------- | ---------------------------- | ------------------------------------------------------- |
 | Debian / Ubuntu | `apt-get install librrd-dev` |                                                         |
 | RHEL / CentOS   | `yum install rrdtool-devel`  |                                                         |
 | Fedora          | `yum install rrdtool-devel`  | <https://apps.fedoraproject.org/packages/rrdtool-devel> |
@@ -38,8 +38,8 @@ will usually also install the library.
 | OSX             | `brew install rrdtool`       |                                                         |
 | Windows         | Not available                |                                                         |
 
-Note: on OSX you may have to update `xcode`, using
-`xcode-select --install`.
+Note: on OSX you may have to update `xcode`, using `xcode-select
+--install`.
 
 ### Package installation
 
@@ -152,8 +152,8 @@ specific data to retrieve. This includes the consolidation function
 (e.g. “AVERAGE”) and time step (e.g. 60), the `end` time. You must also
 specifiy either the `start` time, or the number of steps, `n_steps`.
 
-In this example, you extract the average for 1 minute periods
-(`step = 60`), for one entire day (`n_steps = 24 * 60`):
+In this example, you extract the average for 1 minute periods (`step
+= 60`), for one entire day (`n_steps = 24 * 60`):
 
 ``` r
 end_time <- as.POSIXct("2018-05-02") # timestamp with data in example

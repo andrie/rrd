@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rrd <img src='man/figures/logo.svg' align="right" height="139" width="139" />
+# rrd <img src='man/figures/logo.svg' align="right" height="139" width="139"/>
 
 <!-- badges: start -->
 
@@ -14,7 +14,7 @@ status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/pa
 [![CRAN RStudio mirror
 downloads](http://cranlogs.r-pkg.org/badges/rrd)](http://www.r-pkg.org/pkg/rrd)
 [![Codecov test
-coverage](https://codecov.io/gh/andrie/rrd/branch/master/graph/badge.svg)](https://codecov.io/gh/andrie/rrd?branch=master)
+coverage](https://codecov.io/gh/andrie/rrd/branch/main/graph/badge.svg)](https://codecov.io/gh/andrie/rrd?branch=main)
 <!-- badges: end -->
 
 The `rrd` package allows you to read data from an

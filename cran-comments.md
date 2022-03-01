@@ -1,4 +1,6 @@
-This is an update of the rrd package to prepare for testthat_3.0.0
+This is an update of the rrd package with an updated configuration script that attempts to fix the note (on Linux) and error (on Mac OS) on the CRAN build machines.
+
+This update makes no functional changes.
 
 ## R CMD check results
 

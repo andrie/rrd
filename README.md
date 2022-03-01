@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rrd <img src='man/figures/logo.svg' align="right" height="139" />
+# rrd <img src='man/figures/logo.svg' align="right" height="139" width="139" />
 
 <!-- badges: start -->
 
@@ -14,7 +14,7 @@ status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/pa
 [![CRAN RStudio mirror
 downloads](http://cranlogs.r-pkg.org/badges/rrd)](http://www.r-pkg.org/pkg/rrd)
 [![Codecov test
-coverage](https://codecov.io/gh/andrie/rrd/branch/master/graph/badge.svg)](https://codecov.io/gh/andrie/rrd?branch=master)
+coverage](https://codecov.io/gh/andrie/rrd/branch/main/graph/badge.svg)](https://codecov.io/gh/andrie/rrd?branch=main)
 <!-- badges: end -->
 
 The `rrd` package allows you to read data from an
@@ -30,7 +30,7 @@ In order to build the package from source you need
 will usually also install the library.
 
 | Platform        | Installation                 | Reference                                               |
-| --------------- | ---------------------------- | ------------------------------------------------------- |
+|-----------------|------------------------------|---------------------------------------------------------|
 | Debian / Ubuntu | `apt-get install librrd-dev` |                                                         |
 | RHEL / CentOS   | `yum install rrdtool-devel`  |                                                         |
 | Fedora          | `yum install rrdtool-devel`  | <https://apps.fedoraproject.org/packages/rrdtool-devel> |
@@ -38,8 +38,8 @@ will usually also install the library.
 | OSX             | `brew install rrdtool`       |                                                         |
 | Windows         | Not available                |                                                         |
 
-Note: on OSX you may have to update `xcode`, using `xcode-select
---install`.
+Note: on OSX you may have to update `xcode`, using
+`xcode-select --install`.
 
 ### Package installation
 
@@ -152,8 +152,8 @@ specific data to retrieve. This includes the consolidation function
 (e.g. “AVERAGE”) and time step (e.g. 60), the `end` time. You must also
 specifiy either the `start` time, or the number of steps, `n_steps`.
 
-In this example, you extract the average for 1 minute periods (`step
-= 60`), for one entire day (`n_steps = 24 * 60`):
+In this example, you extract the average for 1 minute periods
+(`step = 60`), for one entire day (`n_steps = 24 * 60`):
 
 ``` r
 end_time <- as.POSIXct("2018-05-02") # timestamp with data in example

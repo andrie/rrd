@@ -1,3 +1,4 @@
+#!/bin/sh
 # Anticonf script by Jeroen Ooms (2022)
 # The script will try 'pkg-config' to find required cflags and ldflags.
 # Make sure this executable is in PATH when installing the package.
@@ -14,7 +15,8 @@ PKG_TEST_HEADER="<rrd.h>"
 PKG_LIBS="-lrrd"
 
 # Use pkg-config if available
-if [ $(command -v pkg-config) ]; then
+pkg-config --version >/dev/null 2>&1
+if [ $? -eq 0 ]; then
   PKGCONFIG_CFLAGS=$(pkg-config --cflags ${PKG_CONFIG_NAME})
   PKGCONFIG_LIBS=$(pkg-config --libs ${PKG_CONFIG_NAME})
 fi

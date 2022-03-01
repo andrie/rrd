@@ -16,3 +16,4 @@ dev
 ^CRAN-RELEASE$
 ^\.github$
 ^configure.log$
+^windows$

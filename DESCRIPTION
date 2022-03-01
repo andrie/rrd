@@ -16,7 +16,6 @@ Description: Makes it easy to import the data from a 'RRD' database
 URL: https://github.com/andrie/rrd/, https://andrie.github.io/rrd/
 BugReports: https://github.com/andrie/rrd/issues
 SystemRequirements: librrd: 'librrd-dev' (DEB), 'rrdtool-devel' (RPM), 'rrdtool' (OSX), 'rrdtool' (CSW)
-OS_type: unix
 NeedsCompilation: yes
 Imports: 
     assertthat,

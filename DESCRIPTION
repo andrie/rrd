@@ -29,7 +29,8 @@ License: MIT + file LICENSE
 Suggests: 
     testthat,
     covr,
-    ggplot2
+    ggplot2,
+    spelling
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Encoding: UTF-8

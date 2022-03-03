@@ -1,9 +1,20 @@
-#include <rrd.h>
-#include <R.h>
-#include <Rdefines.h>
-#include <Rinternals.h>
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
+#include <time.h>
+#include <R.h>
+#include <Rinternals.h>
+#include <Rdefines.h>
+#include <rrd.h>
 
+
+// #ifndef NULL
+//   #ifdef __cplusplus
+//     #define NULL 0
+//   #else
+//     #define NULL ((void *)0)
+//   #endif
+// #endif
 
 
 // linked list we use to store the rra info
@@ -15,7 +26,7 @@ typedef struct _rra_info {
 } rra_info; 
 
 
-/* SMR: guard against unitinialized memory */
+/* SMR: guard against uninitialized memory */
 rra_info* alloc_rra_info(void) {
   rra_info* new_rra_info;
 
@@ -83,7 +94,7 @@ rra_info* get_rra_info(rrd_info_t* rrdInfoIn, int *rraCntOut, unsigned long *ste
   char rowsKey[80];
   char perRowKey[80];
   
-  //generating key values
+  //generating key values 
   sprintf(cfKey, "rra[%d].cf", 0);
   sprintf(rowsKey, "rra[%d].rows", 0);
   sprintf(perRowKey, "rra[%d].pdp_per_row", 0);
@@ -156,8 +167,8 @@ rra_info* get_rra_info(rrd_info_t* rrdInfoIn, int *rraCntOut, unsigned long *ste
  */
 SEXP describe_rrd(SEXP filenameIn){
   
-  int rraCnt, status, size, i, ds, j, timeStamp;
-  unsigned long curStep, n_datasets, step;
+  int rraCnt;
+  unsigned long step;
   rra_info* rra_info_list;
   rrd_info_t *rrdInfo;
   
@@ -192,8 +203,8 @@ SEXP describe_rrd(SEXP filenameIn){
  * and uses that information to expose all values in the file
  * 
  * Returns a list (one for each RRA) of R data.frames
- * gets the cosolidation functions and computes the step for each RRA
- * gets the first and last timestamp for each RRA
+ * gets the consolidation functions and computes the step for each RRA
+ * gets the first and last time stamp for each RRA
  * calls rrd_fetch_r and copies all values to R data frames
  * 
  * https://github.com/oetiker/rrdtool-1.x/blob/master/src/rrd_fetch.c
@@ -205,7 +216,7 @@ SEXP smart_import_rrd(SEXP filenameIn){
   char **ds_namv; // names of data sources
   // char *filename;
   
-  time_t first, last, start, end, *startAr;
+  time_t last, start, end, *startAr;
   rrd_value_t *data;
   rra_info* rra_info_list;
   rra_info* rra_info_tmp;

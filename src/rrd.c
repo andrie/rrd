@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 #include <time.h>
 #include <R.h>
@@ -6,14 +8,13 @@
 #include <rrd.h>
 
 
-#ifndef NULL
-  #ifdef __cplusplus
-    #define NULL 0
-  #else
-    #define NULL ((void *)0)
-  #endif
-#endif
-
+// #ifndef NULL
+//   #ifdef __cplusplus
+//     #define NULL 0
+//   #else
+//     #define NULL ((void *)0)
+//   #endif
+// #endif
 
 
 // linked list we use to store the rra info
@@ -93,7 +94,7 @@ rra_info* get_rra_info(rrd_info_t* rrdInfoIn, int *rraCntOut, unsigned long *ste
   char rowsKey[80];
   char perRowKey[80];
   
-  //generating key values
+  //generating key values 
   sprintf(cfKey, "rra[%d].cf", 0);
   sprintf(rowsKey, "rra[%d].rows", 0);
   sprintf(perRowKey, "rra[%d].pdp_per_row", 0);
@@ -202,8 +203,8 @@ SEXP describe_rrd(SEXP filenameIn){
  * and uses that information to expose all values in the file
  * 
  * Returns a list (one for each RRA) of R data.frames
- * gets the cosolidation functions and computes the step for each RRA
- * gets the first and last timestamp for each RRA
+ * gets the consolidation functions and computes the step for each RRA
+ * gets the first and last time stamp for each RRA
  * calls rrd_fetch_r and copies all values to R data frames
  * 
  * https://github.com/oetiker/rrdtool-1.x/blob/master/src/rrd_fetch.c

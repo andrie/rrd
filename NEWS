@@ -1,11 +1,19 @@
-rrd-0.2.3 (2020-09-13)
+rrd-0.2.4
+=========
+
+* No functional changes
+* Update `autoconf` to conform to CRAN, thanks to @jeroen
+* Added entry to `sysreqsdb` and updated SystemRequirements field.  https://github.com/r-hub/sysreqsdb/pull/88
+
+
+rrd-0.2.3
 =========
 
 * No functional changes
 * Upgrade tests to `testthat_3.0.0`
 
 
-rrd-0.2.2 (2019-07-05)
+rrd-0.2.2
 =========
 
 * Bug fix on larger RRD files that cause corruption and segfaults, provided by Steven Rezsutek (#8)
@@ -13,7 +21,7 @@ rrd-0.2.2 (2019-07-05)
 * Added documentation for installation instructions on OSX (#7)
 
 
-rrd-0.2.0 (2018-06-20)
+rrd-0.2.0
 =========
 
 * First release to CRAN

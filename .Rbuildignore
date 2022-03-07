@@ -17,3 +17,4 @@ dev
 ^\.github$
 ^configure.log$
 ^windows$
+^CRAN-SUBMISSION$

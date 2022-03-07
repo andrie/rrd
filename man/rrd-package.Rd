@@ -9,7 +9,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Makes it easy to import the data from a 'RRD' database (<https://oss.oetiker.ch/rrdtool/>) directly into R data structures. The resulting objects are 'tibble' objects or a list of 'tibble' objects, making it easy to manipulate the data. The package uses `librrd` to import the numerical data in a `RRD` database directly into R data structures without using intermediate formats.
+Makes it easy to import the data from a 'RRD' database (<https://oss.oetiker.ch/rrdtool/>) directly into R data structures. The resulting objects are 'tibble' objects or a list of 'tibble' objects, making it easy to manipulate the data. The package uses 'librrd' to import the numerical data in a 'RRD' database directly into R data structures without using intermediate formats.
 }
 \section{Details}{
 

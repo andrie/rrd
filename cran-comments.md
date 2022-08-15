@@ -1,8 +1,4 @@
-I'm resubmitting after fixing CRAN's request to change backticks to straight single quotes in the description.
-
-This is an update of the rrd package with an updated configuration script that attempts to fix the note (on Linux) and error (on Mac OS) on the CRAN build machines.
-
-This update makes no functional changes.
+This minor update fixes HTML5 problems report on the CRAN machines
 
 ## R CMD check results
 

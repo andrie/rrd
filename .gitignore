@@ -11,3 +11,6 @@ src/Makevars
 configure.log
 autobrew
 windows
+inst/doc
+/doc/
+/Meta/

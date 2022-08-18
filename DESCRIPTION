@@ -26,9 +26,15 @@ Suggests:
     testthat,
     covr,
     ggplot2,
-    spelling
+    spelling,
+    knitr,
+    rmarkdown,
+    config,
+    ggplot2,
+    magrittr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Encoding: UTF-8
 Language: en-US
 Config/testthat/edition: 3
+VignetteBuilder: knitr

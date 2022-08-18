@@ -1,6 +1,8 @@
 # rrd-0.2.5
 
-* Documentation update
+* Documentation update to fix HTML5 problems
+* Add vignette
+
 
 # rrd-0.2.4
 

@@ -1,0 +1,4 @@
+default:
+  rrd_location: !expr system.file("extdata", package = "rrd")
+  cores: !expr getOption("mc.cores")
+  foo: bar

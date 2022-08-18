@@ -18,3 +18,5 @@ dev
 ^configure.log$
 ^windows$
 ^CRAN-SUBMISSION$
+^doc$
+^Meta$

@@ -13,36 +13,30 @@ knitr::opts_chunk$set(
 )
 ```
 
-# rrd <img src='man/figures/logo.svg' align="right" height="139" width="139" />
+# rrd <img src="man/figures/logo.svg" align="right" height="139" width="139"/>
 
 <!-- badges: start -->
-[![R build status](https://github.com/andrie/rrd/workflows/R-CMD-check/badge.svg)](https://github.com/andrie/rrd/actions)
-[![CRAN status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/package=rrd)
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html)
-[![](http://www.r-pkg.org/badges/version/rrd)](https://www.r-pkg.org:443/pkg/rrd)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/rrd)](https://www.r-pkg.org:443/pkg/rrd)
-[![Codecov test coverage](https://codecov.io/gh/andrie/rrd/branch/main/graph/badge.svg)](https://app.codecov.io/gh/andrie/rrd?branch=main)
+
+[![R build status](https://github.com/andrie/rrd/workflows/R-CMD-check/badge.svg)](https://github.com/andrie/rrd/actions) [![CRAN status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/package=rrd) [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html) [![](http://www.r-pkg.org/badges/version/rrd)](https://www.r-pkg.org:443/pkg/rrd) [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/rrd)](https://www.r-pkg.org:443/pkg/rrd) [![Codecov test coverage](https://codecov.io/gh/andrie/rrd/branch/main/graph/badge.svg)](https://app.codecov.io/gh/andrie/rrd?branch=main)
+
 <!-- badges: end -->
 
-
 The `rrd` package allows you to read data from an [RRD](https://oss.oetiker.ch/rrdtool/) Round Robin Database.
-
 
 ## Installation
 
 ### System requirements
 
-In order to build the package from source you need [librrd](https://oss.oetiker.ch/rrdtool/doc/librrd.en.html).
-Installing [RRDtool](https://oss.oetiker.ch/rrdtool/) from your package manager will usually also install the library.
+In order to build the package from source you need [librrd](https://oss.oetiker.ch/rrdtool/doc/librrd.en.html). Installing [RRDtool](https://oss.oetiker.ch/rrdtool/) from your package manager will usually also install the library.
 
-Platform        | Installation                   
--------------   | ------------------------------ 
-Debian / Ubuntu | `apt-get install librrd-dev`   
-RHEL / CentOS   | `yum install rrdtool-devel`    
-Fedora          | `yum install rrdtool-devel`    
-Solaris / CSW   | Install `rrdtool`              
-OSX             | `brew install rrdtool`         
-Windows         | Not available                  
+| Platform        | Installation                 |
+|-----------------|------------------------------|
+| Debian / Ubuntu | `apt-get install librrd-dev` |
+| RHEL / CentOS   | `yum install rrdtool-devel`  |
+| Fedora          | `yum install rrdtool-devel`  |
+| Solaris / CSW   | Install `rrdtool`            |
+| OSX             | `brew install rrdtool`       |
+| Windows         | Not available                |
 
 Note: on OSX you may have to update `xcode`, using `xcode-select --install`.
 
@@ -50,7 +44,7 @@ Note: on OSX you may have to update `xcode`, using `xcode-select --install`.
 
 You can install the stable version of the package from CRAN:
 
-```r
+``` r
 install.packages("rrd")
 ```
 
@@ -61,17 +55,15 @@ And the development version from [GitHub](https://github.com/):
 remotes::install_github("andrie/rrd")
 ```
 
-## About RRD and RRDtool <img src='man/figures/rrdtool-logo.png' align="right" height="70" />
+## About RRD and RRDtool <img src="man/figures/rrdtool-logo.png" align="right" height="70"/>
 
-The `rrd` package is a wrapper around `RRDtool`.  Internally it uses [librrd](https://oss.oetiker.ch/rrdtool/doc/librrd.en.html) to import the binary data directly into R without exporting it to an intermediate format first.
+The `rrd` package is a wrapper around `RRDtool`. Internally it uses [librrd](https://oss.oetiker.ch/rrdtool/doc/librrd.en.html) to import the binary data directly into R without exporting it to an intermediate format first.
 
-For an introduction to RRD database, see https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html
-
+For an introduction to RRD database, see <https://oss.oetiker.ch/rrdtool/tut/rrd-beginners.en.html>
 
 ## Example
 
-
-The package contains some example RRD files that originated in an instance of RStudio Connect.  In this example, you analyse CPU data in the file `cpu-0.rrd`.
+The package contains some example RRD files that originated in an instance of RStudio Connect. In this example, you analyze CPU data in the file `cpu-0.rrd`.
 
 Load the package and assign the location of the `cpu-0.rrd` file to a variable:
 
@@ -82,21 +74,17 @@ rrd_cpu_0 <- system.file("extdata/cpu-0.rrd", package = "rrd")
 
 To describe the contents of an RRD file, use `describe_rrd()`:
 
-
 ```{r describe}
 describe_rrd(rrd_cpu_0)
 ```
 
-
 To read an entire RRD file, i.e. all of the RRA archives, use `read_rrd()`. This returns a list of `tibble` objects:
-
 
 ```{r rrd}
 cpu <- read_rrd(rrd_cpu_0)
 
 str(cpu, max.level = 1)
 ```
-
 
 Since the resulting object is a list of `tibble`s, you can easily work with individual data frames:
 
@@ -107,9 +95,8 @@ cpu[[1]]
 
 tail(cpu$AVERAGE60$sys)
 ```
- 
 
-To read a single RRA archive from an RRD file, use `read_rra()`. To use this function, you must specify several arguments that define the specific data to retrieve. This includes the consolidation function (e.g. "AVERAGE") and time step (e.g. 60), the `end` time.  You must also specifiy either the `start` time, or the number of steps, `n_steps`.
+To read a single RRA archive from an RRD file, use `read_rra()`. To use this function, you must specify several arguments that define the specific data to retrieve. This includes the consolidation function (e.g. "AVERAGE") and time step (e.g. 60), the `end` time. You must also specifiy either the `start` time, or the number of steps, `n_steps`.
 
 In this example, you extract the average for 1 minute periods (`step = 60`), for one entire day (`n_steps = 24 * 60`):
 
@@ -131,11 +118,8 @@ ggplot(avg_60, aes(x = timestamp, y = user)) +
   ggtitle("CPU0 usage, data read from RRD file")
 ```
 
-
-
-
 ## More information
 
 For more information on `rrdtool` and the `rrd` format please refer to the official [rrdtool documentation](https://oss.oetiker.ch/rrdtool/doc/index.en.html) and [tutorials](https://oss.oetiker.ch/rrdtool/tut/index.en.html).
 
-You can also read a more in-depth description of the package in an [R Views](https://rviews.rstudio.com/) blog post [Reading and analysing log files in the RRD database format](https://rviews.rstudio.com/2018/06/20/reading-rrd-files/).
+You can also read a more in-depth description of the package in an [R Views](https://rviews.rstudio.com/) blog post [Reading and analyzing log files in the RRD database format](https://rviews.rstudio.com/2018/06/20/reading-rrd-files/).

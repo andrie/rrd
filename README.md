@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rrd <img src='man/figures/logo.svg' align="right" height="139" width="139" />
+# rrd <img src="man/figures/logo.svg" align="right" height="139" width="139"/>
 
 <!-- badges: start -->
 
@@ -15,6 +15,7 @@ status](https://www.r-pkg.org/badges/version/rrd)](https://cran.r-project.org/pa
 downloads](http://cranlogs.r-pkg.org/badges/rrd)](https://www.r-pkg.org:443/pkg/rrd)
 [![Codecov test
 coverage](https://codecov.io/gh/andrie/rrd/branch/main/graph/badge.svg)](https://app.codecov.io/gh/andrie/rrd?branch=main)
+
 <!-- badges: end -->
 
 The `rrd` package allows you to read data from an
@@ -30,7 +31,7 @@ In order to build the package from source you need
 will usually also install the library.
 
 | Platform        | Installation                 |
-| --------------- | ---------------------------- |
+|-----------------|------------------------------|
 | Debian / Ubuntu | `apt-get install librrd-dev` |
 | RHEL / CentOS   | `yum install rrdtool-devel`  |
 | Fedora          | `yum install rrdtool-devel`  |
@@ -38,8 +39,8 @@ will usually also install the library.
 | OSX             | `brew install rrdtool`       |
 | Windows         | Not available                |
 
-Note: on OSX you may have to update `xcode`, using `xcode-select
---install`.
+Note: on OSX you may have to update `xcode`, using
+`xcode-select --install`.
 
 ### Package installation
 
@@ -56,7 +57,7 @@ And the development version from [GitHub](https://github.com/):
 remotes::install_github("andrie/rrd")
 ```
 
-## About RRD and RRDtool <img src='man/figures/rrdtool-logo.png' align="right" height="70" />
+## About RRD and RRDtool <img src="man/figures/rrdtool-logo.png" align="right" height="70"/>
 
 The `rrd` package is a wrapper around `RRDtool`. Internally it uses
 [librrd](https://oss.oetiker.ch/rrdtool/doc/librrd.en.html) to import
@@ -69,7 +70,7 @@ For an introduction to RRD database, see
 ## Example
 
 The package contains some example RRD files that originated in an
-instance of RStudio Connect. In this example, you analyse CPU data in
+instance of RStudio Connect. In this example, you analyze CPU data in
 the file `cpu-0.rrd`.
 
 Load the package and assign the location of the `cpu-0.rrd` file to a
@@ -140,6 +141,7 @@ cpu[[1]]
 #>  9 2018-04-02 12:32:00 0.0300  0.0274      0 0.943     0     0       0 0       
 #> 10 2018-04-02 12:33:00 0.0162  0.00617     0 0.978     0     0       0 0.000137
 #> # … with 43,189 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 
 tail(cpu$AVERAGE60$sys)
 #> [1] 0.0014390667 0.0020080000 0.0005689333 0.0000000000 0.0014390667
@@ -152,8 +154,8 @@ specific data to retrieve. This includes the consolidation function
 (e.g. “AVERAGE”) and time step (e.g. 60), the `end` time. You must also
 specifiy either the `start` time, or the number of steps, `n_steps`.
 
-In this example, you extract the average for 1 minute periods (`step
-= 60`), for one entire day (`n_steps = 24 * 60`):
+In this example, you extract the average for 1 minute periods
+(`step = 60`), for one entire day (`n_steps = 24 * 60`):
 
 ``` r
 end_time <- as.POSIXct("2018-05-02") # timestamp with data in example
@@ -175,6 +177,7 @@ avg_60
 #>  9 2018-05-01 00:09:00 0.00748 5.68e-4     0 0.992 0           0       0 0      
 #> 10 2018-05-01 00:10:00 0.00516 0           0 0.995 0           0       0 0      
 #> # … with 1,430 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 And you can easily plot using your favourite packages:
@@ -198,6 +201,6 @@ documentation](https://oss.oetiker.ch/rrdtool/doc/index.en.html) and
 [tutorials](https://oss.oetiker.ch/rrdtool/tut/index.en.html).
 
 You can also read a more in-depth description of the package in an [R
-Views](https://rviews.rstudio.com/) blog post [Reading and analysing log
+Views](https://rviews.rstudio.com/) blog post [Reading and analyzing log
 files in the RRD database
 format](https://rviews.rstudio.com/2018/06/20/reading-rrd-files/).

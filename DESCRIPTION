@@ -30,7 +30,6 @@ Suggests:
     knitr,
     rmarkdown,
     config,
-    ggplot2,
     magrittr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1

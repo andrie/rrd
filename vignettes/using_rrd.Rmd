@@ -1,8 +1,8 @@
 ---
-title: "Reading and analysing log files in the RRD database format"
+title: "Reading and analyzing log files in the RRD database format"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Reading and analysing log files in the RRD database format}
+  %\VignetteIndexEntry{Reading and analyzing log files in the RRD database format}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -36,7 +36,7 @@ As an aside, the RStudio Pro products (specifically [RStudio Server Pro](https:/
 
 The name RRD is an initialism of **R**ound **R**obin **D**atabase. The "round robin" refers to the fact that the database is always fixed in size, and as a new entry enters the database, the oldest entry is discarded. In practical terms, the database collects data for a fixed period of time, and information that is older than the threshold gets removed.
 
-![Image from loriotpro(<https://bit.ly/2tk2MFa>)](rra.png){width="600"}
+![Image credit: loriotpro(<https://bit.ly/2tk2MFa>)](rra.png){width="600"}
 
 A second quality of RRD databases is that each datum is stored in different "consolidation data points", where every data point is an aggregation over time. For example, a data point can represent an average value for the time period, or a maximum over the period. Typical consolidation functions include `average`, `min` and `max`.
 

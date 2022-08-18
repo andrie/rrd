@@ -3,7 +3,7 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   using_rrd: using_rrd.html
-last_built: 2022-08-18T13:06Z
+last_built: 2022-08-18T16:47Z
 urls:
   reference: https://andrie.github.io/rrd/reference
   article: https://andrie.github.io/rrd/articles
